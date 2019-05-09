@@ -1,0 +1,21 @@
+from selenium import webdriver
+import time
+options = webdriver.ChromeOptions()
+options.add_argument('disable-infobars')
+driver = webdriver.Chrome(options=options)
+driver.maximize_window()
+driver.get("https://y.qq.com/")
+driver.find_element_by_class_name("js_login").click()
+time.sleep(3)
+# 切换到frame
+driver.switch_to.frame("frame_tips")
+time.sleep(3)
+driver.find_element_by_id("switcher_plogin").click()
+user_input=driver.find_element_by_id("u")
+user_input.send_keys("932813074")
+pass_input=driver.find_element_by_id("p")
+pass_input.send_keys("kqmg&lyy")
+driver.find_element_by_id("login_button").click()
+# driver.switch_to.default_content()
+all_songs=driver.find_element_by_class_name("songlist__songname")
+time.sleep(5)
