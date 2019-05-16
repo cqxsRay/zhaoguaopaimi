@@ -1,3 +1,4 @@
+# 这个是接口自动化测试用例的模版
 import unittest
 from common import getexcel
 from common import configHttp

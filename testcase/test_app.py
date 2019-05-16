@@ -4,6 +4,7 @@ from testfile.uiautomator import appfortest
 from time import sleep
 
 class testapp(unittest.TestCase):
+
     global d
     # 连接手机
     d = u2.connect("192.168.131.109")
