@@ -48,7 +48,6 @@ class testp2p(unittest.TestCase):
         cls.driver.quit()
 
 
-
 if __name__=='__main__':
     # 方法1：执行所有的测试
     unittest.main()
