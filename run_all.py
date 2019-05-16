@@ -81,6 +81,6 @@ if __name__ == "__main__":
     # 运行测试用例
     runner.run(suite)
     # 这个的测试报告文件是给jekins用的
-    shutil.copyfile(newreport,report)
+    # shutil.copyfile(newreport,report)
     get_report()
     send_mail()
