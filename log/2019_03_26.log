@@ -1,7 +1,0 @@
-[2019-03-26 13:38:58,002] - Log.py] - INFO: 登录结果：{'errorCode': 0, 'errorMessage': 'SUCCESS', 'data': None}
-[2019-03-26 13:38:58,153] - Log.py] - INFO: 充值结果{'errorCode': -1, 'errorMessage': '系统繁忙，请稍后重试！'}
-[2019-03-26 13:39:19,625] - Log.py] - ERROR: timeout
-[2019-03-26 13:39:52,909] - Log.py] - INFO: 登录结果：{'errorCode': 0, 'errorMessage': 'SUCCESS', 'data': None}
-[2019-03-26 13:39:53,042] - Log.py] - INFO: 充值结果{'errorCode': -1, 'errorMessage': '系统繁忙，请稍后重试！'}
-[2019-03-26 18:31:04,219] - Log.py] - INFO: 登录结果：{'errorCode': 0, 'errorMessage': 'SUCCESS', 'data': None}
-[2019-03-26 18:31:40,564] - Log.py] - INFO: 登录结果：{'errorCode': 0, 'errorMessage': 'SUCCESS', 'data': None}

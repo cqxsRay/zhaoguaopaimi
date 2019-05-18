@@ -10,7 +10,7 @@ class ConfigHttp:
 
     def __init__(self):
         global  host, timeout
-        host = localReadConfig.get_http("beta_host")
+        host = localReadConfig.get_http("yc_host")
         timeout = localReadConfig.get_http("timeout")
         self.headers = {"Content-Type": "application/json"}
         self.params = {}

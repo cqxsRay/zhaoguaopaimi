@@ -7,7 +7,8 @@ localReadConfig = readConfig.ReadConfig()
 def conectredis():
     pool = redis.ConnectionPool(host='192.168.50.16', password='guohuaiGUO4056')  # 实现一个连接池
     r = redis.Redis(connection_pool=pool)
-
+    # 从redis取值
+    r.get("user:captcha:648eedf7-78f0-4e7b-9b03-12b9156609e4")
 class MyDB:
     global host, username, password, port, database, config
     host = localReadConfig.get_db("host")

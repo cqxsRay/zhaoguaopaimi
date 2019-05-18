@@ -1,4 +1,4 @@
-# 这个是接口自动化测试用例的模版
+# 这个是接口自动化测试用例的模版,读取excel里的内容
 import unittest
 from common import getexcel
 from common import configHttp
