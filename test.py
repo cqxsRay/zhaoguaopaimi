@@ -40,7 +40,7 @@ def str2key(s):
 def pubkey():
     pubkey = 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCaB9jVQ+FbrVCYQKLmGGoARBE64ecBlBfea3T/vS0m8LXzW1gh9u0EJx8UM16R9nPcP3ubpHGlDSCAIl1Sl41+c4hbCaVyP79NGnfug69p//DvCXeg2rdNWT5jkin6Nm6hhCbpyhIQv4ky2XdMO6TL8KPTbOZV9pQJzLEmRDqpcQIDAQAB'
     key = str2key(pubkey)
-    # 随机生成12位密钥,并转换为bytes类型
+    # 随机生成16位密钥,并转换为bytes类型
     # ran_str =bytes(''.join(random.sample(string.ascii_letters + string.digits, 16)),encoding='utf-8')
     modulus = int(key[0], 16)
     exponent = int(key[1], 16)
@@ -49,22 +49,26 @@ def pubkey():
     crypto = rsa.encrypt(bytes(ran_str,encoding='utf-8'), rsa_pubkey)
     b64str = base64.b64encode(crypto)
     mikey=str(b64str,encoding='utf-8')
+    # print(mikey)
     return mikey
 
 ran_str =''.join(random.sample(string.ascii_letters + string.digits, 16))
-
-# 注册
+# print(ran_str)
+pubkey()
+# 注册 加密的
 def regist():
     content.set_url("/property/api/v1/user/regist")
     content.set_headers({'accessToken':'3255','channel':'pc',
                          'deviceToken':b'0000000','imei':b'0000000',
                          'source':'WEB','version':'0.0.0',
                          "Content-Type": "application/json"})
-    content.set_data({'content':{'confirmPassword':jiami.aes_cipher(ran_str,'111111'),'loginName':jiami.aes_cipher(ran_str,'yuan'),
-                      'loginPassword':jiami.aes_cipher(ran_str,'111111'),'mobile':jiami.aes_cipher(ran_str,'14711234500'),
-                    'smsAuthCode':1,'userType':1},'key':pubkey()})
+    content.set_data({'content':jiami.aes_cipher(ran_str,str({'confirmPassword':'111111','loginName':'yuan',
+                      'loginPassword':'111111','mobile':'14711234500','smsAuthType':1,
+                    'smsAuthCode':'000000','userType':1})),
+                      'key':pubkey()})
     print(content.post().json())
 # regist()
+# 不加密的
 def regist2():
     content.set_url("/property/api/v1/user/regist")
     content.set_headers({'accessToken': '3255', 'channel': 'pc',
@@ -72,7 +76,8 @@ def regist2():
                          'source': 'WEB', 'version': '0.0.0',
                          "Content-Type": "application/json"})
     content.set_data({'confirmPassword':'111111','loginName':'yuan',
-                      'loginPassword':'111111','mobile':'14711234500',
-                    'smsAuthCode':1,'userType':1})
+                      'loginPassword':'111111','mobile':'14711234500','smsAuthType':1,
+                    'smsAuthCode':'111111','userType':1})
     print(content.post().json())
-regist2()
+regist()
+# regist2()
