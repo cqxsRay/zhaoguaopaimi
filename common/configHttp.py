@@ -12,7 +12,13 @@ class ConfigHttp:
         global  host, timeout
         host = localReadConfig.get_http("yc_host")
         timeout = localReadConfig.get_http("timeout")
-        self.headers = {"Content-Type": "application/json"}
+        # 一般是默认这个
+        # self.headers = {"Content-Type": "application/json"}
+        # 招拍挂专用
+        self.headers={'accessToken':'3255','channel':'pc',
+                         'deviceToken':b'0000000','imei':b'0000000',
+                         'source':'WEB','version':'0.0.0',
+                         "Content-Type": "application/json"}
         self.params = {}
         self.data = {}
         self.url = None
