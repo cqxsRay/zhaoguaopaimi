@@ -1,6 +1,6 @@
 import unittest
 import uiautomator2 as u2
-from testfile.uiautomator import appfortest
+from appui import appfortest
 from time import sleep
 
 class testapp(unittest.TestCase):
