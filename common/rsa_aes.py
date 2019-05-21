@@ -73,6 +73,28 @@ def aes(shuju,yaoshi):
     # 返回加密后的数据
     return jiamihou
 """
+用第三方提供的接口方法实现aes解密,参数可配置
+"""
+def aes_de(shuju,yaoshi):
+    """
+
+    :param shuju: 要解密的数据
+    :param yaoshi: 解密的钥匙
+    :return:
+    """
+    url = "http://tool.chacuo.net/cryptaes"
+    data = {"data": shuju,
+            "type": "aes",
+            "arg": "m=ecb_pad=pkcs5_block=128_p=%s_o=0_s=gb2312_t=1" % yaoshi}
+    headers = {"Content-Type": "application/x-www-form-urlencoded"}
+    # data是form形式的，不用转换为json
+    r = requests.post(url=url, data=data, headers=headers)
+    jiemihou = r.json()['data']
+    # print(jiemihou)
+    # 返回加密后的数据
+    return jiemihou
+
+"""
 rsa公钥加密，生成16位随机数作为钥匙，然后用rsa的公钥加密钥匙
 参考
 https://www.cnblogs.com/masako/p/7660418.html
