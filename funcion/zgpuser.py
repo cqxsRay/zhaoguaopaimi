@@ -39,24 +39,33 @@ def getcapture():
     tuxing = r.get("YC:PROPERTY:USER:CAPTCHA:%s"%a)
     tx=str(tuxing, encoding='utf-8')
     return tx
-# 登录
+# 登录,续输入错误密码3次需要输入图形验证码
 def login():
     capture = getcapture()
     content.set_url("/property/api/v1/user/login")
-    # 针对连续输入错误密码3次需要输入图形验证码
     content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':capture, 'regNo': '14711234500',
                       'loginPassword':'123456','userType':1})),'key':a.pubkey()})
-    print(content.post().json())
-    # 正常登录不需要输入图形验证码
-    # content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'regNo':'14711234501','loginPassword':'111111','userType':1})),
-    #                   'key': a.pubkey()})
-    # user=content.post().json()['data']
-    # # 将服务端返回的密文解密
-    # accesstoken=rsa_aes.aes_de(user,a.ran_str)
-    # # 处理解密后的数据
-    # at=json.loads(accesstoken[0])['accessToken']
-    # # 返回accessToken
+    user = content.post().json()['data']
+    # 将服务端返回的密文解密
+    accesstoken = rsa_aes.aes_de(user, a.ran_str)
+    # 处理解密后的数据
+    at = json.loads(accesstoken[0])['accessToken']
+    # 返回accessToken
+    return at
+
     # return at
+# 登录,不需要输入图形验证码
+def loginnocap():
+    content.set_url("/property/api/v1/user/login")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'regNo':'14711234501','loginPassword':'111111','userType':1})),
+                      'key': a.pubkey()})
+    user=content.post().json()['data']
+    # 将服务端返回的密文解密
+    accesstoken=rsa_aes.aes_de(user,a.ran_str)
+    # 处理解密后的数据
+    at=json.loads(accesstoken[0])['accessToken']
+    # 返回accessToken
+    return at
 # 退出登录
 def logout():
     content.set_headers({'accessToken': login(), 'channel': 'pc',
