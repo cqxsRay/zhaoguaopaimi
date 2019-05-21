@@ -1,22 +1,16 @@
+# -*- coding: utf-8 -*-
+
+
 import base64
 from Crypto.Cipher import AES
-from common import rsa_aes
-def add_to_16(value):
-    while len(value) % 16 != 0:
-        value += '\0'
-    return str.encode(value)  # 返回bytes
-#解密方法
-def decrpyt(encontent,tk):
-    key = tk[0:16]
-    des_new = AES.new(key,AES.MODE_ECB)
-    encontent += (len(encontent) % 4 )*'='
-    decrpytBytes = base64.b64decode(encontent)
-    meg = des_new.decrypt(decrpytBytes)
-    print(meg.decode('utf-8').strip(''))
-    return meg.decode('utf-8').strip('')
-decrpyt('G5fFLi9FUNrQhvxtGxZ3Wg==','wcCWvmAStF4hBVap')
+from Crypto.Util.Padding import pad
+#把加密的数据，用base64  decode，再用aes解密
+def aes_decode(key,data):
+    # unpad = lambda s : s[0:-ord(s[-1])]
+    cipher = AES.new(key.encode('utf-8'),AES.MODE_ECB)
+    result2 = base64.b64decode(data)
+    decrypted = cipher.decrypt(result2)
+    print(decrypted)
+    return  decrypted
 
-
-# a=rsa_aes.Rsa()
-# print(a.ran_str)
-# print(rsa_aes.aes_cipher('wcCWvmAStF4hBVap','111111'))
+aes_decode('1zpRLU8k9aAyDOVt','FID9SFvuyLaeh0tcjN18r0A+xAS2k8d5RbziXv9qWk4BDFgDlc/Fu8Gp5kmA8qkYKrXOoYnhpwulKp8uOgrClqBiFaPf1W8RxEcFhRqLAfbwJbSXT54Sthsr983qoX6i')

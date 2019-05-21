@@ -5,8 +5,7 @@ from Crypto.Util.Padding import pad
 import rsa
 import random
 import string
-from common import configHttp
-content = configHttp.ConfigHttp()
+
 """
 aes base64 补码方式zeropading 128位 ecb模式
 """
