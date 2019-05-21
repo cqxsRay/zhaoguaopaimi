@@ -85,5 +85,6 @@ def modifypwd():
                                                                     'smsAuthType':2})),'key': a.pubkey()})
     print(content.post().json())
 login()
+
 # modifypwd()
 # logout()
