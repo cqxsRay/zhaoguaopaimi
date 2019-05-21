@@ -44,7 +44,7 @@ def login():
     capture = getcapture()
     content.set_url("/property/api/v1/user/login")
     # 针对连续输入错误密码3次需要输入图形验证码
-    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captca':capture, 'regNo': '14711234500',
+    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':capture, 'regNo': '14711234500',
                       'loginPassword':'123456','userType':1})),'key':a.pubkey()})
     print(content.post().json())
     # 正常登录不需要输入图形验证码
