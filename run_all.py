@@ -69,18 +69,18 @@ def send_mail():
     print('sendmail success')
 if __name__ == "__main__":
     # 构造测试集
-    # suite = unittest.defaultTestLoader.discover(case_path,'test*.py')
-    suite = unittest.defaultTestLoader.discover(case_path, 'test_login.py')
+    suite = unittest.defaultTestLoader.discover(case_path,'test*.py')
+    # suite = unittest.defaultTestLoader.discover(case_path, 'test_login.py')
     # 获取当前时间
     now = time.strftime('%Y-%m-%d %H_%M_%S')
     newreport = report_path + now + 'report.html'
-    report = report_path + 'htmlreport.html'
+    report = report_path + 'HTMLReport.html'
     # 定义测试报告
     runner = HTMLTestReportCN.HTMLTestRunner(title='自动化测试报告',description='用例执行情况：',
                                              stream=open(newreport, 'wb'),verbosity=2)
     # 运行测试用例
     runner.run(suite)
     # 这个的测试报告文件是给jekins用的
-    # shutil.copyfile(newreport,report)
-    get_report()
-    send_mail()
+    shutil.copyfile(newreport,report)
+    # get_report()
+    # send_mail()

@@ -8,26 +8,26 @@ class testzpg(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # log.info("登录用例执行开始")
-        print("登录用例开始执行\n")
+        print("注册用例开始执行\n")
     def setUp(self):
         # log.info("单条用例执行开始")
         print("单条用例执行开始")
-    def test_login1(self):
-        user = method.login('14711234500', '123456')
-        self.assertEqual(user.json()['status'], '00000000', msg="手机号密码均正确，应该登录成功")
-    def test_login2(self):
-        user=method.login('14711234500','111111')
-        self.assertEqual(user.json()['status'],'20002005',msg="登录密码错误，应该登录失败")
-    def test_login3(self):
-        user = method.login('14711234506', '111111')
-        self.assertEqual(user.json()['status'], '20002002', msg="未注册用户登录")
+    def test_regist1(self):
+        user=method.regist('yuan3','14711234502','111111','111111')
+        self.assertEqual(user.json()['status'],'00000000',msg="正常用户注册")
+    def test_regist2(self):
+        user=method.regist('yuan3','14711234503','123456','111111')
+        self.assertEqual(user.json()['status'],'00000019',msg="两次密码不对注册")
+    def test_regist3(self):
+        user=method.regist('yuan3','14711234502','111111','111111')
+        self.assertEqual(user.json()['status'],'20002021',msg="已注册用户注册")
     def tearDown(self):
         # log.info("单条用例执行结束")
         print("单条用例执行结束")
     @classmethod
     def tearDownClass(cls):
         # log.info("登录用例执行结束")
-        print("登录用例执行结束")
+        print("注册用例执行结束")
 
 if __name__=='__main__':
     # 方法1：执行所有的测试
