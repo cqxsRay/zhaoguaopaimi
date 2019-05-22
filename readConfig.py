@@ -48,4 +48,6 @@ class ReadConfig:
         value = self.cf.get("DATABASE", name)
         return value
 
-
+    def get_redis(self, name):
+        value = self.cf.get("REDIS", name)
+        return value

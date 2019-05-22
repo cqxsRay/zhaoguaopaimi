@@ -1,17 +1,16 @@
 import requests
-import readConfig as readConfig
 from common.Log import Log
 import json
-
-localReadConfig = readConfig.ReadConfig()
+import readConfig
+config = readConfig.ReadConfig()
 log=Log()
 
 class ConfigHttp:
 
     def __init__(self):
         global  host, timeout
-        host = localReadConfig.get_http("yc_host")
-        timeout = localReadConfig.get_http("timeout")
+        host = config.get_http("yc_host")
+        timeout = config.get_http("timeout")
         self.headers = {"Content-Type": "application/json"}
         self.params = {}
         self.data = {}

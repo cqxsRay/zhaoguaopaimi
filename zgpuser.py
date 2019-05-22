@@ -43,8 +43,12 @@ def getcapture():
 def login():
     capture = getcapture()
     content.set_url("/property/api/v1/user/login")
-    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':capture, 'regNo': '14711234500',
-                      'loginPassword':'123456','userType':1})),'key':a.pubkey()})
+    content.set_headers({'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':capture, 'regNo': '14711234503',
+                      'loginPassword':'111111','userType':1})),'key':a.pubkey()})
     user = content.post().json()['data']
     # 将服务端返回的密文解密
     accesstoken = rsa_aes.aes_de(user, a.ran_str)
@@ -84,7 +88,15 @@ def modifypwd():
     content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'phone':'14711234500','password':'123456','smsAuthCode':'000000',
                                                                     'smsAuthType':2})),'key': a.pubkey()})
     print(content.post().json())
-login()
 
-# modifypwd()
-# logout()
+# 修改绑定手机号
+def modifymobile():
+    content.set_headers({'accessToken': login(), 'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/changeRegisterPhone")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'oldPhone':'14711234503','newPhone':'14711234501','smsAuthCode':'000000',
+                                                                    'smsAuthType':6})),'key': a.pubkey()})
+    print(content.post().json())
+modifymobile()
