@@ -1,5 +1,6 @@
 import redis
 import json
+
 from common import rsa_aes
 from common import configHttp
 pool = redis.ConnectionPool(host='192.168.50.19', password='guohuai')
@@ -49,30 +50,33 @@ def login():
                          "Content-Type": "application/json"})
     content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':capture, 'regNo': '14711234503',
                       'loginPassword':'111111','userType':1})),'key':a.pubkey()})
-    user = content.post().json()['data']
-    # 将服务端返回的密文解密
-    accesstoken = rsa_aes.aes_de(user, a.ran_str)
-    # 处理解密后的数据
-    at = json.loads(accesstoken[0])['accessToken']
-    # 返回accessToken
-    return at
+    print(content.post().json())
 
     # return at
 # 登录,不需要输入图形验证码
 def loginnocap():
     content.set_url("/property/api/v1/user/login")
-    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'regNo':'14711234501','loginPassword':'111111','userType':1})),
+    content.set_headers({'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'regNo':'14711234502','loginPassword':'111111','userType':1})),
                       'key': a.pubkey()})
-    user=content.post().json()['data']
-    # 将服务端返回的密文解密
-    accesstoken=rsa_aes.aes_de(user,a.ran_str)
-    # 处理解密后的数据
-    at=json.loads(accesstoken[0])['accessToken']
-    # 返回accessToken
-    return at
+    user = content.post().json()
+    if user['status'] != '00000000':
+        return
+
+    else:
+        # 将服务端返回的密文解密
+        data =rsa_aes.aes_decode(a.ran_str,user['data'])
+        # 处理解密后的数据，用Aesmi加密方法需要这么处理
+        token = "".join([data.strip().rsplit("}", 1)[0], "}"])
+        # 返回accessToken
+        token=json.loads(token)
+        return token['accessToken']
 # 退出登录
 def logout():
-    content.set_headers({'accessToken': login(), 'channel': 'pc',
+    content.set_headers({'accessToken': loginnocap(), 'channel': 'pc',
                     'deviceToken': b'0000000', 'imei': b'0000000',
                     'source': 'WEB', 'version': '0.0.0',
                     "Content-Type": "application/json"})
@@ -99,4 +103,3 @@ def modifymobile():
     content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'oldPhone':'14711234503','newPhone':'14711234501','smsAuthCode':'000000',
                                                                     'smsAuthType':6})),'key': a.pubkey()})
     print(content.post().json())
-modifymobile()

@@ -40,7 +40,8 @@ def aes_cipher(key, aes_str):
     """
     # 使用key,选择加密方式
     aes = AES.new(key.encode('utf-8'), AES.MODE_ECB)
-    pad_pkcs7 = pad(aes_str.encode('utf-8'), AES.block_size, style='pkcs7')  # 选择pkcs7补全
+    # 选择pkcs7补全
+    pad_pkcs7 = pad(aes_str.encode('utf-8'), AES.block_size, style='pkcs7')
     encrypt_aes = aes.encrypt(pad_pkcs7)
     # 加密结果
     encrypted_text = str(base64.encodebytes(encrypt_aes), encoding='utf-8')  # 解码
@@ -89,9 +90,8 @@ def aes_de(shuju,yaoshi):
     # data是form形式的，不用转换为json
     r = requests.post(url=url, data=data, headers=headers)
     jiemihou = r.json()['data']
-    # print(jiemihou)
-    # 返回加密后的数据
-    return jiemihou
+    # 返回加密后的数据,列表形式
+    # return jiemihou
 
 """
 rsa公钥加密，生成16位随机数作为钥匙，然后用rsa的公钥加密钥匙
@@ -137,3 +137,18 @@ class Rsa:
         mikey=str(b64str,encoding='utf-8')
         # print(mikey)
         return mikey
+
+# aes解密
+def aes_decode(key,text):
+    while len(text) % 16 != 0:
+        text += '\0'
+    # 返回bytes
+    # text=str.encode(text)
+    key=str.encode(key)
+    # 初始化加密器
+    aes = AES.new(key, AES.MODE_ECB)
+    text_decrypted = str(aes.decrypt(base64.decodebytes(bytes(text, encoding='utf8'))).rstrip(b'\0').decode("utf8"))
+    # 返回解密后的数据，字符串
+    return text_decrypted
+
+

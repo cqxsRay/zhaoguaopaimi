@@ -96,7 +96,13 @@ def loginforothers(mobile,logpwd,utype=1):
         accesstoken=rsa_aes.aes_de(user['data'],a.ran_str)
         # 处理解密后的数据
         at=json.loads(accesstoken[0])['accessToken']
-        # 返回accessToken
+        # 如果用res_aes.aes_decode方法解密，则需要这么处理
+        # data = rsa_aes.aes_decode(a.ran_str, user['data'])
+        # # 处理解密后的数据，用Aesmi加密方法需要这么处理
+        # token = "".join([data.strip().rsplit("}", 1)[0], "}"])
+        # # 返回accessToken
+        # token = json.loads(token)
+        # return token['accessToken']
         return at
 
 # 登录 加密
@@ -175,7 +181,7 @@ def modifymobile(oPhone,logpwd,nPhone,smscode='000000',smstype=6):
 # loginmore('14711234500','111111')
 # modifypwd('14711234501','111111','111111')
 # logout('14711234500','123456')
-# loginforothers('1471123450','123456')
+loginforothers('14711234502','111111')
 # getcapture()
 # modifymobile('14711234501','111111','14711234504')
 
