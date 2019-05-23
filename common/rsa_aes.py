@@ -91,7 +91,7 @@ def aes_de(shuju,yaoshi):
     r = requests.post(url=url, data=data, headers=headers)
     jiemihou = r.json()['data']
     # 返回加密后的数据,列表形式
-    # return jiemihou
+    return jiemihou
 
 """
 rsa公钥加密，生成16位随机数作为钥匙，然后用rsa的公钥加密钥匙

@@ -2,8 +2,6 @@ import unittest
 import method
 from common import configHttp
 content=configHttp.ConfigHttp()
-# from common import getexcel
-# user=getexcel.read_xls("test.xlsx","Sheet1").dict_xls()
 class testzpg(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -29,7 +27,7 @@ class testzpg(unittest.TestCase):
         # log.info("登录用例执行结束")
         print("注册用例执行结束")
 
-if __name__=='__main__':
-    # 方法1：执行所有的测试
-    unittest.main()
+# if __name__=='__main__':
+#     # 方法1：执行所有的测试
+#     unittest.main()
 

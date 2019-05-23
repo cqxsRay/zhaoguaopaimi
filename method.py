@@ -3,6 +3,7 @@ import json
 from common import rsa_aes
 from common import configHttp
 import readConfig
+from common import generator
 config = readConfig.ReadConfig()
 content = configHttp.ConfigHttp()
 a=rsa_aes.Rsa()
@@ -70,7 +71,6 @@ def loginmore(mobile,logpwd,code=getcapture(),utype=1):
         # 返回accessToken
         return at
 
-    # return at
 # 登录,不需要输入图形验证码 给其他需要登录对接口提供token
 def loginforothers(mobile,logpwd,utype=1):
     """
@@ -175,14 +175,89 @@ def modifymobile(oPhone,logpwd,nPhone,smscode='000000',smstype=6):
     content.set_url("/property/api/v1/user/changeRegisterPhone")
     content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'oldPhone':oPhone,'newPhone':nPhone,'smsAuthCode':smscode,
                                                                     'smsAuthType':smstype})),'key': a.pubkey()})
+
+    print(content.post().json())
     return content.post().json()
+#修改绑定手机号验证原手机号
+def modifyold(mobile,logpwd,smscode='000000',smstype=5):
+    '''
 
-# login('14711234500','111111')
-# loginmore('14711234500','111111')
-# modifypwd('14711234501','111111','111111')
+    :param mobile: 登录手机号
+    :param logpwd: 登录密码
+    :param smscode: 原手机号验证码
+    :param smstype: 短信类型，这个是5
+    :return:
+    '''
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/checkPhoneSmsAuthCode")
+    content.set_data( {'content': rsa_aes.aes_cipher(a.ran_str, str({'phone':mobile, 'smsAuthCode': smscode,
+                                                       'smsAuthType': smstype})), 'key': a.pubkey()})
+    return content.post().json()
+# 个人用户认证
+def personcertify(mobile,logpwd,addrss,bankno,bankcode,bankname,bankphone,cardno,city,country,email,province,realname,smscode='000000'):
+    """
+    :param mobile: 登录手机号
+    :param logpwd: 登录密码
+    :param addrss: 居住详细地址
+    :param smscode: 短信验证码
+    :param bankno: 银行卡号
+    :param bankcode: 银行编号
+    :param bankname: 银行名称
+    :param bankphone: 银行预留手机号
+    :param cardno: 身份证号
+    :param city: 居住地城市
+    :param country: 国家
+    :param email: 邮箱
+    :param province: 居住地省份
+    :param realname: 真实姓名
+    :return:
+    """
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/certificate/personCertificate")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'address': addrss, 'authCode': smscode,
+                                                                    'bankCardNo':bankno,'bankCode':bankcode,
+                                                                    'bankName':bankname,'bankPhone':bankphone,
+                                                                    'cardNo':cardno,'city':city,
+                                                                    'county':country,'email':email,
+                                                               'province':province,'realname':realname})), 'key': a.pubkey()})
+
+    return content.post().json()
+# 修改绑定邮箱
+def modifyemail(mobile,logpwd,email,emailcode='000000',emailtype=2):
+    """
+    :param mobile: 登录手机号
+    :param logpwd: 登录密码
+    :param email: 新邮箱
+    :param emailcode: 邮箱验证码
+    :param emailtype: 修改邮箱类型 这里是2
+    :return:
+    """
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/changeEmail")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'email': email,'emailAuthCode':emailcode,
+                     'emailAuthType':emailtype})),'key': a.pubkey()})
+    print(content.post().json())
+    # return content.post().json()
+# login('14711234500','123456')
+# loginmore('14711234500','123456')
+# modifypwd('14711234500','123456','111111')
 # logout('14711234500','123456')
-loginforothers('14711234502','111111')
+# loginforothers('14711234502','111111')
 # getcapture()
-# modifymobile('14711234501','111111','14711234504')
+# modifymobile('14711234504','111111','14711234501')
+# modifyold('14711234500','111111')
 
+# personcertify('14711234502','111111','详细地址达到噶收到哥哥3的爱国啊郭德纲',
+#               generator.createbankid(),'622609','招商银行','14711234502',generator.createidcard(),'北京','中国',
+#               '34354365465@qq.com','山东',generator.name())
 
+modifyemail('14711234502','111111','65786@11.com')

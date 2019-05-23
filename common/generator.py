@@ -110,6 +110,7 @@ def name():
                    '乾', '坤', '']
 
     name=random.choice(last_name)+random.choice(first_names)+random.choice(first_names)
+    log.info("本次生成的姓名为%s"%name)
     return name
 
 # 校验银行卡号是否正确的算法
@@ -125,6 +126,6 @@ def luhn(card_num):
             s += t
     return s % 10 == 0
 
-
-if __name__ == '__main__':
-    createidcard()
+#
+# if __name__ == '__main__':
+#     createidcard()

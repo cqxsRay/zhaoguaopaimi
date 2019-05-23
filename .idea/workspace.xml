@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a94990f0-276c-4cd4-b608-186d0a231f2b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/testcase/test_personcertify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/rsa_aes.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/rsa_aes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/method.py" beforeDir="false" afterPath="$PROJECT_DIR$/method.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zgpuser.py" beforeDir="false" afterPath="$PROJECT_DIR$/zgpuser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/test_modifylogpwd.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/test_modifylogpwd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/test_regist.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/test_regist.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,12 +54,14 @@
     <SUITE FILE_PATH="coverage/interfacetest666$insurance.coverage" NAME="insurance Coverage Results" MODIFIED="1546073615674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/interface" />
     <SUITE FILE_PATH="coverage/interfacetest666$login.coverage" NAME="login Coverage Results" MODIFIED="1553005200356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
     <SUITE FILE_PATH="coverage/zhaoguapai$zgpuser__1_.coverage" NAME="zgpuser Coverage Results" MODIFIED="1558520788851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$method.coverage" NAME="method Coverage Results" MODIFIED="1558600174452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/interfacetest666$run_mail.coverage" NAME="run_mail Coverage Results" MODIFIED="1557235012912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/interfacetest666$runapp.coverage" NAME="runapp Coverage Results" MODIFIED="1550736390231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$configDB.coverage" NAME="configDB Coverage Results" MODIFIED="1554212169653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_for_test_Login_testLess.coverage" NAME="Unittests for test.Login.testLess Coverage Results" MODIFIED="1545813778281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_login_py.coverage" NAME="Unittests in test_login.py Coverage Results" MODIFIED="1558495819084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/zhaoguapai$zgpuser.coverage" NAME="zgpuser Coverage Results" MODIFIED="1558583159764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_personcertify_py.coverage" NAME="Unittests in test_personcertify.py Coverage Results" MODIFIED="1558595306163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$Log.coverage" NAME="Log Coverage Results" MODIFIED="1550909902582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/myautotest$rsa_aes.coverage" NAME="rsa_aes Coverage Results" MODIFIED="1558416933105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/myautotest$forpctest.coverage" NAME="forpctest Coverage Results" MODIFIED="1557391509449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pcui" />
@@ -102,19 +106,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/rsa_aes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1163">
-              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#203#627#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zgpuser.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1059">
@@ -129,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/method.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="107" column="7" lean-forward="true" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+            <state relative-caret-position="179">
+              <caret line="231" column="53" selection-start-line="231" selection-start-column="53" selection-end-line="231" selection-end-column="53" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -139,12 +130,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/configHttp.py">
+        <entry file="file://$PROJECT_DIR$/common/generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="1919">
+              <caret line="128" lean-forward="true" selection-start-line="128" selection-start-column="1" selection-end-line="130" selection-end-column="20" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testfile/case/test" />
         <option value="$PROJECT_DIR$/testfile/case/ddd.py" />
         <option value="$PROJECT_DIR$/testfile/funcion/login.py" />
         <option value="$PROJECT_DIR$/testfile/funcion/user.py" />
@@ -178,7 +168,6 @@
         <option value="$PROJECT_DIR$/testfile/selenium/manybuy.py" />
         <option value="$PROJECT_DIR$/testfile/funcion/jiami.py" />
         <option value="$PROJECT_DIR$/common/aes_mi.py" />
-        <option value="$PROJECT_DIR$/common/generator.py" />
         <option value="$PROJECT_DIR$/testfile/funcion/redis.py" />
         <option value="$PROJECT_DIR$/common/writexls.py" />
         <option value="$PROJECT_DIR$/testfile/uiautomator/app.py" />
@@ -213,14 +202,16 @@
         <option value="$PROJECT_DIR$/common/configHttp.py" />
         <option value="$PROJECT_DIR$/readConfig.py" />
         <option value="$PROJECT_DIR$/config.ini" />
-        <option value="$PROJECT_DIR$/testcase/test_modifylogpwd.py" />
         <option value="$PROJECT_DIR$/testcase/test_login.py" />
-        <option value="$PROJECT_DIR$/testcase/test_regist.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/common/rsa_aes.py" />
-        <option value="$PROJECT_DIR$/method.py" />
         <option value="$PROJECT_DIR$/zgpuser.py" />
+        <option value="$PROJECT_DIR$/common/rsa_aes.py" />
+        <option value="$PROJECT_DIR$/common/generator.py" />
+        <option value="$PROJECT_DIR$/testcase/test_personcertify.py" />
+        <option value="$PROJECT_DIR$/testcase/test_modifylogpwd.py" />
+        <option value="$PROJECT_DIR$/testcase/test_regist.py" />
+        <option value="$PROJECT_DIR$/method.py" />
       </list>
     </option>
   </component>
@@ -251,11 +242,6 @@
               <item name="zhaoguapai" type="b2602c69:ProjectViewProjectNode" />
               <item name="zhaoguapai" type="462c0819:PsiDirectoryNode" />
               <item name="testcase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhaoguapai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhaoguapai" type="462c0819:PsiDirectoryNode" />
-              <item name="testdata" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -293,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.zgpuser">
+  <component name="RunManager" selected="Python.method">
     <configuration name="method" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="zhaoguapai" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -330,28 +316,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/rsa_aes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="zhaoguapai" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_all.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -404,20 +368,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in test_personcertify.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="zhaoguapai" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/testcase/test_personcertify.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.method" />
-      <item itemvalue="Python.run_all" />
       <item itemvalue="Python.zgpuser" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.rsa_aes" />
+      <item itemvalue="Python tests.Unittests in test_personcertify.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.method" />
+        <item itemvalue="Python tests.Unittests in test_personcertify.py" />
         <item itemvalue="Python.zgpuser" />
         <item itemvalue="Python.rsa_aes" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.method" />
-        <item itemvalue="Python.run_all" />
       </list>
     </recent_temporary>
   </component>
@@ -500,7 +479,7 @@
       <workItem from="1558420904133" duration="70000" />
       <workItem from="1558421003860" duration="1640000" />
       <workItem from="1558489387699" duration="23434000" />
-      <workItem from="1558575386211" duration="8091000" />
+      <workItem from="1558575386211" duration="15246000" />
     </task>
     <task id="LOCAL-00001" summary="更新pc测试用例的模版">
       <created>1557989617822</created>
@@ -677,19 +656,17 @@
       <option name="project" value="LOCAL" />
       <updated>1558510572801</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="test">
+      <created>1558590084829</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1558590084829</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_p2pc_py - 2019.05.16 at 14h 45m 17s.xml">
-      <configuration name="Unittests in test_p2pc.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_p2pc_py - 2019.05.16 at 14h 45m 47s.xml">
-      <configuration name="Unittests in test_p2pc.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_p2pc_py - 2019.05.16 at 14h 47m 21s.xml">
-      <configuration name="Unittests in test_p2pc.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_p2pc_py - 2019.05.16 at 14h 49m 35s.xml">
       <configuration name="Unittests in test_p2pc.py" configurationId="tests" />
     </history-entry>
@@ -711,9 +688,18 @@
     <history-entry file="Unittests_in_test_login_py - 2019.05.22 at 11h 30m 23s.xml">
       <configuration name="Unittests in test_login.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_personcertify_py - 2019.05.23 at 15h 07m 22s.xml">
+      <configuration name="Unittests in test_personcertify.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_personcertify_py - 2019.05.23 at 15h 07m 55s.xml">
+      <configuration name="Unittests in test_personcertify.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_personcertify_py - 2019.05.23 at 15h 08m 28s.xml">
+      <configuration name="Unittests in test_personcertify.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="551599000" />
+    <option name="totallyTimeSpent" value="558754000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -726,14 +712,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="806" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20600858" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32913166" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4995958" visible="true" weight="0.26750702" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4995958" visible="true" weight="0.3487395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32352942" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -821,13 +806,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Crypto/PublicKey/RSA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="753" selection-start-line="753" selection-end-line="753" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pubkey.pem" />
     <entry file="file://$PROJECT_DIR$/tt.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/random.py">
@@ -892,15 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/report/2019-05-22 11_30_48report.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -927,26 +896,6 @@
           <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/test_modifylogpwd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/test_regist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1062,22 +1011,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/rsa_aes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1163">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#203#627#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/myautotest/common/rsa_aes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-672">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1919">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-start-column="1" selection-end-line="130" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/rsa_aes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#203#627#0" />
           </folding>
         </state>
       </provider>
@@ -1092,10 +1051,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_modifylogpwd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_regist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_personcertify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/method.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="107" column="7" lean-forward="true" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+        <state relative-caret-position="179">
+          <caret line="231" column="53" selection-start-line="231" selection-start-column="53" selection-end-line="231" selection-end-column="53" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
