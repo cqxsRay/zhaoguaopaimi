@@ -3,10 +3,12 @@ import json
 from common import rsa_aes
 from common import configHttp
 import readConfig
+from common import Log
 from common import generator
 config = readConfig.ReadConfig()
 content = configHttp.ConfigHttp()
 a=rsa_aes.Rsa()
+log=Log.Log()
 
 
 # 注册 加密
@@ -93,7 +95,7 @@ def loginforothers(mobile,logpwd,utype=1):
 
     else:
         # 将服务端返回的密文解密
-        accesstoken=rsa_aes.aes_de(user['data'],a.ran_str)
+        accesstoken=rsa_aes.aes_de(a.ran_str,user['data'])
         # 处理解密后的数据
         at=json.loads(accesstoken[0])['accessToken']
         # 如果用res_aes.aes_decode方法解密，则需要这么处理
@@ -228,6 +230,34 @@ def personcertify(mobile,logpwd,addrss,bankno,bankcode,bankname,bankphone,cardno
                                                                'province':province,'realname':realname})), 'key': a.pubkey()})
 
     return content.post().json()
+# 发送邮箱验证码
+def sendmailcode(mobile,logpwd,email,emailtype):
+    """
+
+    :param mobile: 登录手机号
+    :param logpwd: 登录密码
+    :param email: 邮箱
+    :param emailtype: 邮箱验证码类型，原邮箱是1，新邮箱是2
+    :return:
+    """
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/sendEmailAuthCode")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'email':email,'emailAuthType':emailtype})),
+                      'key': a.pubkey()})
+    print(content.post().json())
+# 原邮箱验证码验证
+def originmailverify(mobile,logpwd,email,emailcode='000000',emailtype=1):
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/checkEmailAuthCode")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'email': email, 'emailAuthCode': emailcode,
+                                                                    'emailAuthType': emailtype})), 'key': a.pubkey()})
+    print(content.post().json())
 # 修改绑定邮箱
 def modifyemail(mobile,logpwd,email,emailcode='000000',emailtype=2):
     """
@@ -235,7 +265,7 @@ def modifyemail(mobile,logpwd,email,emailcode='000000',emailtype=2):
     :param logpwd: 登录密码
     :param email: 新邮箱
     :param emailcode: 邮箱验证码
-    :param emailtype: 修改邮箱类型 这里是2
+    :param emailtype: 修改邮箱类型 原邮箱是1，新是2
     :return:
     """
     content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
@@ -247,6 +277,46 @@ def modifyemail(mobile,logpwd,email,emailcode='000000',emailtype=2):
                      'emailAuthType':emailtype})),'key': a.pubkey()})
     print(content.post().json())
     # return content.post().json()
+"""
+修改绑定邮箱完整流程
+"""
+def revisemail(mobile,logpwd,oldmail,newmail,oldmailtype=1,newmailtype=2,oldmailcode='000000',newmailcode='000000'):
+    """
+
+    :param mobile:
+    :param logpwd:
+    :param oldmail:
+    :param newmail:
+    :param oldmailtype:
+    :param newmailtype:
+    :param oldmailcode:
+    :param newmailcode:
+    :return:
+    """
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    # 发送原邮箱验证码
+    content.set_url("/property/api/v1/user/sendEmailAuthCode")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'email': oldmail, 'emailAuthType':oldmailtype})),
+                      'key': a.pubkey()})
+    log.info("发送原邮箱验证码%s"%content.post().json())
+    # 验证原邮箱验证码
+    content.set_url("/property/api/v1/user/checkEmailAuthCode")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'email': oldmail, 'emailAuthCode': oldmailcode,
+                                                                    'emailAuthType': oldmailtype})), 'key': a.pubkey()})
+    log.info("原邮箱验证码验证结果%s" % content.post().json())
+    # 发送新邮箱验证码
+    content.set_url("/property/api/v1/user/sendEmailAuthCode")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'email': newmail, 'emailAuthType': newmailtype})),
+                      'key': a.pubkey()})
+    log.info("发送新邮箱验证码%s" % content.post().json())
+    # 修改绑定邮箱
+    content.set_url("/property/api/v1/user/changeEmail")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'email': newmail, 'emailAuthCode': newmailcode,
+                                                                    'emailAuthType':newmailtype})), 'key': a.pubkey()})
+    log.info("修改绑定邮箱为%s，结果是%s" %(newmail,content.post().json()))
 # login('14711234500','123456')
 # loginmore('14711234500','123456')
 # modifypwd('14711234500','123456','111111')
@@ -260,4 +330,9 @@ def modifyemail(mobile,logpwd,email,emailcode='000000',emailtype=2):
 #               generator.createbankid(),'622609','招商银行','14711234502',generator.createidcard(),'北京','中国',
 #               '34354365465@qq.com','山东',generator.name())
 
-modifyemail('14711234502','111111','65786@11.com')
+
+# sendmailcode('14711234502','111111','123456@139.com',1)
+# originmailverify('14711234502','111111','newmai1@139.com')
+# sendmailcode('14711234502','111111','123456@11.com',2)
+# modifyemail('14711234502','111111','123456@11.com')
+revisemail('14711234502','111111','65786@11.com','newmai1@139.com')

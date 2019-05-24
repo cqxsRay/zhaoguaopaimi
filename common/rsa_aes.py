@@ -75,7 +75,7 @@ def aes(shuju,yaoshi):
 """
 用第三方提供的接口方法实现aes解密,参数可配置
 """
-def aes_de(shuju,yaoshi):
+def aes_de(yaoshi,shuju):
     """
 
     :param shuju: 要解密的数据

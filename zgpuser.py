@@ -67,9 +67,8 @@ def loginnocap():
         return
 
     else:
-        # 将服务端返回的密文解密
-        data =rsa_aes.aes_decode(a.ran_str,user['data'])
-        # 处理解密后的数据，用Aesmi加密方法需要这么处理
+        data = rsa_aes.aes_decode(a.ran_str, user['data'])
+        # 处理解密后的数据，用自己写的解密方法需要这么处理，因为后面还有别的字符
         token = "".join([data.strip().rsplit("}", 1)[0], "}"])
         # 返回accessToken
         token=json.loads(token)
