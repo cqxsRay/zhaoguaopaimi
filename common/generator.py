@@ -1,6 +1,7 @@
 import random
 from datetime import date, timedelta
 from common.Log import Log
+import string
 log=Log()
 # 随机生成手机号
 def createPhone():
@@ -125,7 +126,12 @@ def luhn(card_num):
         else:
             s += t
     return s % 10 == 0
+# 随机生成邮箱
+def mail():
+    suffix=['@126.com','@139.com','@qq.com','@sina.com']
+    mail =  "".join(random.sample(string.ascii_letters + string.digits, 10))+random.choice(suffix)
+    log.info("本次生成的邮箱为%s" % mail)
+    return mail
 
-#
 # if __name__ == '__main__':
-#     createidcard()
+#     mail()

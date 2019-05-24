@@ -39,13 +39,15 @@ def getcapture():
     pool = redis.ConnectionPool(host=config.get_redis('yc_host'), password=config.get_redis('yc_password'))
     r = redis.Redis(connection_pool=pool)
     content.set_url("/property/api/v1/user/getCaptcha")
-    # 获取session
-    a=content.get().headers['Set-Cookie'].split(';')[0].split('=')[1]
-    tuxing = r.get("YC:PROPERTY:USER:CAPTCHA:%s"%a)
+    req=content.get()
+    # 获取sessionid
+    ssion=req.headers['Set-Cookie'].split(';')[0].split('=')[1]
+    tuxing = r.get("YC:PROPERTY:USER:CAPTCHA:%s"%ssion)
     tx=str(tuxing, encoding='utf-8')
-    return tx
+    return [tx,req.cookies]
 # 登录,续输入错误密码3次需要输入图形验证码
-def loginmore(mobile,logpwd,code=getcapture(),utype=1):
+
+def logmore(mobile,logpwd,utype=1):
     """
 
     :param mobile: 手机号
@@ -54,7 +56,7 @@ def loginmore(mobile,logpwd,code=getcapture(),utype=1):
     :param utype: 用户类型
     :return:
     """
-    # capture = getcapture()
+    (code, session) = getcapture()
     content.set_url("/property/api/v1/user/login")
     content.set_headers({'channel': 'pc',
                          'deviceToken': b'0000000', 'imei': b'0000000',
@@ -62,12 +64,13 @@ def loginmore(mobile,logpwd,code=getcapture(),utype=1):
                          "Content-Type": "application/json"})
     content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':code, 'regNo':mobile,
                       'loginPassword':logpwd,'userType':utype})),'key':a.pubkey()})
+    content.set_cookie(session)
     user = content.post().json()
     if user['status'] != '00000000':
         return
     else:
         # 将服务端返回的密文解密
-        accesstoken = rsa_aes.aes_de(user['data'], a.ran_str)
+        accesstoken = rsa_aes.aes_de(a.ran_str,user['data'])
         # 处理解密后的数据
         at = json.loads(accesstoken[0])['accessToken']
         # 返回accessToken
@@ -108,7 +111,7 @@ def loginforothers(mobile,logpwd,utype=1):
         return at
 
 # 登录 加密
-def login(mobile, logpwd, utype=1):
+def login(mobile,logpwd, utype=1):
     """
 
     :param mobile: 手机号
@@ -125,6 +128,7 @@ def login(mobile, logpwd, utype=1):
         {'regNo': mobile, 'loginPassword':logpwd, 'userType':utype})),
                       'key': a.pubkey()})
     return content.post().json()
+
 # 退出登录
 def logout(mobile,logpwd):
     """
@@ -178,7 +182,6 @@ def modifymobile(oPhone,logpwd,nPhone,smscode='000000',smstype=6):
     content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'oldPhone':oPhone,'newPhone':nPhone,'smsAuthCode':smscode,
                                                                     'smsAuthType':smstype})),'key': a.pubkey()})
 
-    print(content.post().json())
     return content.post().json()
 #修改绑定手机号验证原手机号
 def modifyold(mobile,logpwd,smscode='000000',smstype=5):
@@ -316,23 +319,30 @@ def revisemail(mobile,logpwd,oldmail,newmail,oldmailtype=1,newmailtype=2,oldmail
     content.set_url("/property/api/v1/user/changeEmail")
     content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'email': newmail, 'emailAuthCode': newmailcode,
                                                                     'emailAuthType':newmailtype})), 'key': a.pubkey()})
-    log.info("修改绑定邮箱为%s，结果是%s" %(newmail,content.post().json()))
+    # log.info("修改绑定邮箱为%s，结果是%s" %(newmail,content.post().json()))
+    return content.post().json()
+# 重置登录密码--验证图形验证码
+def vericapcha(mobile,utype=1):
+    """
+
+    :param mobile:
+    :param captcha:
+    :param utype: 个人是1，企业2
+    :return:
+    """
+    (code, session) = getcapture()
+    content.set_headers({'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/forgetPasswordFirstStep")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'captcha':code,
+                                                                    'userType': utype})), 'key': a.pubkey()})
+
+    content.set_cookie(session)
+    print(content.post().json())
+vericapcha('14711234500')
+
 # login('14711234500','123456')
-# loginmore('14711234500','123456')
-# modifypwd('14711234500','123456','111111')
-# logout('14711234500','123456')
-# loginforothers('14711234502','111111')
+# logmore('14711234500','111111')
 # getcapture()
-# modifymobile('14711234504','111111','14711234501')
-# modifyold('14711234500','111111')
-
-# personcertify('14711234502','111111','详细地址达到噶收到哥哥3的爱国啊郭德纲',
-#               generator.createbankid(),'622609','招商银行','14711234502',generator.createidcard(),'北京','中国',
-#               '34354365465@qq.com','山东',generator.name())
-
-
-# sendmailcode('14711234502','111111','123456@139.com',1)
-# originmailverify('14711234502','111111','newmai1@139.com')
-# sendmailcode('14711234502','111111','123456@11.com',2)
-# modifyemail('14711234502','111111','123456@11.com')
-revisemail('14711234502','111111','65786@11.com','newmai1@139.com')

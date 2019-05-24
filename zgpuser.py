@@ -36,21 +36,24 @@ def regist2():
 def getcapture():
     content.set_url("/property/api/v1/user/getCaptcha")
     # 获取session
-    a=content.get().headers['Set-Cookie'].split(';')[0].split('=')[1]
+    a = content.get().headers['Set-Cookie'].split(';')[0].split('=')[1]
+    # 处理ssesion
     tuxing = r.get("YC:PROPERTY:USER:CAPTCHA:%s"%a)
     tx=str(tuxing, encoding='utf-8')
-    return tx
+    return [tx,a]
 # 登录,续输入错误密码3次需要输入图形验证码
 def login():
-    capture = getcapture()
+    (code,session)=getcapture()
     content.set_url("/property/api/v1/user/login")
     content.set_headers({'channel': 'pc',
                          'deviceToken': b'0000000', 'imei': b'0000000',
                          'source': 'WEB', 'version': '0.0.0',
                          "Content-Type": "application/json"})
-    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':capture, 'regNo': '14711234503',
+    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':code, 'regNo': '14711234500',
                       'loginPassword':'111111','userType':1})),'key':a.pubkey()})
+    content.set_cookie(session)
     print(content.post().json())
+
 
     # return at
 # 登录,不需要输入图形验证码
@@ -102,3 +105,4 @@ def modifymobile():
     content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'oldPhone':'14711234503','newPhone':'14711234501','smsAuthCode':'000000',
                                                                     'smsAuthType':6})),'key': a.pubkey()})
     print(content.post().json())
+login()
