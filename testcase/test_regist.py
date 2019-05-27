@@ -10,15 +10,18 @@ class testzpg(unittest.TestCase):
     def setUp(self):
         # log.info("单条用例执行开始")
         print("单条用例执行开始")
-    def test_regist1(self):
+    def test01(self):
         user=method.regist('yuan3','14711234502','111111','111111')
         self.assertEqual(user['status'],'00000000',msg="正常用户注册")
-    def test_regist2(self):
+    def test02(self):
         user=method.regist('yuan3','14711234503','123456','111111')
         self.assertEqual(user['status'],'00000019',msg="两次密码不对注册")
-    def test_regist3(self):
+    def test03(self):
         user=method.regist('yuan3','14711234502','111111','111111')
         self.assertEqual(user['status'],'20002021',msg="已注册用户注册")
+    def test04(self):
+        user=method.regist('qy1','14711234502','111111','111111',2)
+        self.assertEqual(user['status'],'20002021',msg="企业用户注册")
     def tearDown(self):
         # log.info("单条用例执行结束")
         print("单条用例执行结束")

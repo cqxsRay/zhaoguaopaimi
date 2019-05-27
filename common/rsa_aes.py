@@ -6,24 +6,6 @@ import rsa
 import random
 import string
 
-"""
-aes base64 补码方式zeropading 128位 ecb模式
-"""
-def aes_en(text):
-    key = 'ff3aedb7e0ca331f'  # 加密秘钥要设置16位
-    length = 16
-    count = len(text.encode('utf-8'))
-    # text不是16的倍数那就补足为16的倍数
-    if (count % length != 0):
-        add = length - (count % length)
-    else:
-        add = 0
-    entext = text + ('\0' * add)
-
-    # 初始化加密器
-    aes = AES.new(str.encode(key), AES.MODE_ECB)
-    enaes_text = str(base64.b64encode(aes.encrypt(str.encode(entext))), encoding='utf-8')
-    return enaes_text
 
 """
 aes base64 补码方式pkcs5padding  128位 ecb模式
@@ -48,30 +30,7 @@ def aes_cipher(key, aes_str):
     encrypted_text_str = encrypted_text.replace("\n", "")
     # 此处我的输出结果老有换行符，所以用了临时方法将它剔除
     return encrypted_text_str
-"""
-用第三方提供的接口方法实现aes加密,参数可配置
-"""
-def aes(shuju,yaoshi):
-    """
 
-    :param self:
-    :param shuju: 要加密的数
-    :param key: 加密的要时候
-    :return: 加密后的数
-    """
-    # self.shuju = shuju
-    # self.key = yaoshi
-    # 加密用到的接口
-    url = "http://tool.chacuo.net/cryptaes"
-    data = {"data": shuju,
-            "type": "aes",
-            "arg": "m=ecb_pad=pkcs5_block=128_p=%s_o=0_s=gb2312_t=0" % yaoshi}
-    headers = {"Content-Type": "application/x-www-form-urlencoded"}
-    # data是form形式的，不用转换为json
-    r = requests.post(url=url, data=data, headers=headers)
-    jiamihou = r.json()['data'][0]
-    # 返回加密后的数据
-    return jiamihou
 """
 用第三方提供的接口方法实现aes解密,参数可配置
 """
@@ -85,7 +44,7 @@ def aes_de(yaoshi,shuju):
     url = "http://tool.chacuo.net/cryptaes"
     data = {"data": shuju,
             "type": "aes",
-            "arg": "m=ecb_pad=pkcs5_block=128_p=%s_o=0_s=gb2312_t=1" % yaoshi}
+            "arg": "m=ecb_pad=pkcs5_block=128_p=%s_o=0_s=utf-8_t=1" % yaoshi}
     headers = {"Content-Type": "application/x-www-form-urlencoded"}
     # data是form形式的，不用转换为json
     r = requests.post(url=url, data=data, headers=headers)
@@ -135,10 +94,9 @@ class Rsa:
         crypto = rsa.encrypt(bytes(self.ran_str,encoding='utf-8'), rsa_pubkey)
         b64str = base64.b64encode(crypto)
         mikey=str(b64str,encoding='utf-8')
-        # print(mikey)
         return mikey
 
-# aes解密
+# aes解密 解密后是字符串，如果要用需要对字符串做处理
 def aes_decode(key,text):
     while len(text) % 16 != 0:
         text += '\0'
@@ -150,5 +108,4 @@ def aes_decode(key,text):
     text_decrypted = str(aes.decrypt(base64.decodebytes(bytes(text, encoding='utf8'))).rstrip(b'\0').decode("utf8"))
     # 返回解密后的数据，字符串
     return text_decrypted
-
 

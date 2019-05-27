@@ -12,7 +12,7 @@ log=Log.Log()
 
 
 # 注册 加密
-def regist(logname,mobile,logpwd,cfpwd,smstype=1,smscode='000000',utype=1):
+def regist(logname,mobile,logpwd,cfpwd,utype=1,smstype=1,smscode='000000'):
     """
 
     :param cfpwd: 确认登录密码
@@ -97,18 +97,14 @@ def loginforothers(mobile,logpwd,utype=1):
         return
 
     else:
-        # 将服务端返回的密文解密
-        accesstoken=rsa_aes.aes_de(a.ran_str,user['data'])
-        # 处理解密后的数据
-        at=json.loads(accesstoken[0])['accessToken']
-        # 如果用res_aes.aes_decode方法解密，则需要这么处理
+        data = rsa_aes.aes_de(a.ran_str, user['data'])
+        token=json.loads(data[0])['accessToken']
+        # # 将服务端返回的密文解密
         # data = rsa_aes.aes_decode(a.ran_str, user['data'])
-        # # 处理解密后的数据，用Aesmi加密方法需要这么处理
-        # token = "".join([data.strip().rsplit("}", 1)[0], "}"])
-        # # 返回accessToken
-        # token = json.loads(token)
-        # return token['accessToken']
-        return at
+        # # 处理解密后的数据
+        # data = "".join([data.strip().rsplit('}', 1)[0], "}"])
+        # token = json.loads(data)['accessToken']
+        return token
 
 # 登录 加密
 def login(mobile,logpwd, utype=1):
@@ -414,4 +410,47 @@ def forgotpwd(mobile,newPwd,confirmpwd,smscode='000000',utype=1):
     third=content.post().json()
     log.info("第三步重置密码%s" %third)
     return third
-# forgotpwd('14711234501','111111','111111')
+
+# 企业用户认证
+def companycertify(mobile,logpwd,city,country,province,addrss,registerAmount,businessScope,realname,cardno,legalPersonName,
+                   legalPersonCardNo,creditCode,economyType,entrustUrl,licenseUrl,orgName,email,smscode='000000'):
+    """
+    :param city: 注册城市
+    :param country: 注册地辖区
+    :param province:注册地省份
+    :param addrss: 注册地址
+    :param registerAmount:注册资本
+    :param businessScope: 经营范围
+    :param realname: 联系人姓名
+    :param cardno: 联系人身份证号
+    :param legalPersonName:法人姓名
+    :param legalPersonCardNo:法人身份证号
+    :param creditCode:统一社会信用代码
+    :param economyType: 经济类型 1政府机构 2国有企业3 非国有企业
+    :param entrustUrl: 委托证书存储地址
+    :param licenseUrl:营业执照存储路径
+    :param orgName: 单位名称
+    :param email: 绑定邮箱
+    :param smscode: 手机验证码
+    :return:
+    """
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd,2), 'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/certificate/companyCertificate")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'address': addrss, 'authCode': smscode,
+                                                                    'registerAmount':registerAmount,'businessScope':businessScope,
+                                                                    'legalPersonName':legalPersonName,'legalPersonCardNo':legalPersonCardNo,
+                                                                    'creditCode':creditCode,'economyType':economyType,
+                                                                    'entrustUrl':entrustUrl,'licenseUrl':licenseUrl,
+                                                                    'orgName':orgName,
+                                                                    'cardNo': cardno, 'city': city,
+                                                                    'county': country, 'email': email,
+                                                                    'province': province, 'realname': realname})),'key': a.pubkey()})
+
+
+companycertify('14711234560','123456','都发生过','ddafg','dfadsgd','ghfgdhtrhtrhsghr法国是如何','4546457657','etertqerqvtergefdsv',
+              'fgfdg',generator.createidcard(),'regwreg',generator.createidcard(),'ry54y5byy5eb',2,'retykjhg','ewrtyukjyhtgrfe',
+             'edfgfhtfhtd','345@qq.com')
+# loginforothers('14711234560','123456',2)
