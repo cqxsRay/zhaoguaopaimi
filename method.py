@@ -321,7 +321,7 @@ def revisemail(mobile,logpwd,oldmail,newmail,oldmailtype=1,newmailtype=2,oldmail
                                                                     'emailAuthType':newmailtype})), 'key': a.pubkey()})
     # log.info("修改绑定邮箱为%s，结果是%s" %(newmail,content.post().json()))
     return content.post().json()
-# 重置登录密码--验证图形验证码
+# 忘记登录密码第一步--验证图形验证码
 def vericapcha(mobile,utype=1):
     """
 
@@ -340,9 +340,78 @@ def vericapcha(mobile,utype=1):
                                                                     'userType': utype})), 'key': a.pubkey()})
 
     content.set_cookie(session)
-    print(content.post().json())
-vericapcha('14711234500')
+    return content.post().json()
+# 忘记密码第二步--验证短信验证码
+def vericode(mobile,smscode='000000',utype=1):
+    """
+    :param mobile: 手机号
+    :param smscode: 短信验证码
+    :param utype: 个人是1，企业2
+    :return:
+    """
 
-# login('14711234500','123456')
-# logmore('14711234500','111111')
-# getcapture()
+    content.set_headers({'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/forgetPasswordSecondStep")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'smsAuthCode':smscode,
+                                                                    'userType': utype})), 'key': a.pubkey()})
+
+    return content.post().json()
+
+# 忘记密码第三步--重置密码
+def resetpwd(mobile,newPwd,confirmpwd,utype=1):
+    """
+    :param mobile: 手机号
+    :param newPwd: 新密码
+    :param confirmpwd: 确认密码
+    :param utype: 个人是1，企业2
+    :return:
+    """
+
+    content.set_headers({'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/forgetPasswordThirdStep")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'newPassword':newPwd,
+                                                                    'confirmNewPassword':confirmpwd,
+                                                                    'userType': utype})), 'key': a.pubkey()})
+
+    return content.post().json()
+"""
+忘记登录密码完整流程
+"""
+def forgotpwd(mobile,newPwd,confirmpwd,smscode='000000',utype=1):
+    """
+    :param mobile:
+    :param newPwd:
+    :param confirmpwd:
+    :param smscode:
+    :param utype:
+    :return:
+    """
+    (code, session) = getcapture()
+    content.set_headers({'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    content.set_url("/property/api/v1/user/forgetPasswordFirstStep")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'captcha': code,
+                                                                    'userType': utype})), 'key': a.pubkey()})
+
+    content.set_cookie(session)
+    log.info("第一步验证图形验证码%s"%content.post().json())
+    content.set_url("/property/api/v1/user/forgetPasswordSecondStep")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'smsAuthCode': smscode,
+                                                                    'userType': utype})), 'key': a.pubkey()})
+    log.info("第二步验证短信验证码%s" % content.post().json())
+    content.set_url("/property/api/v1/user/forgetPasswordThirdStep")
+    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'newPassword': newPwd,
+                                                                    'confirmNewPassword': confirmpwd,
+                                                                    'userType': utype})), 'key': a.pubkey()})
+    third=content.post().json()
+    log.info("第三步重置密码%s" %third)
+    return third
+# forgotpwd('14711234501','111111','111111')
