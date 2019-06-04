@@ -6,13 +6,6 @@ import rsa
 import random
 import string
 
-
-"""
-aes base64 补码方式pkcs5padding  128位 ecb模式
-这里的方法是可以实现，AES五种加密模式(CBC、ECB、CTR、OCF、CFB)的
-使用 AES.new()方法时，第二个参数可以选择AES的不同的加密模式，根据需要选择；
-pad()方法的style参数（补全方式），同样是可以灵活变动的
-"""
 def aes_cipher(key, aes_str):
     """
 
@@ -26,11 +19,17 @@ def aes_cipher(key, aes_str):
     pad_pkcs7 = pad(aes_str.encode('utf-8'), AES.block_size, style='pkcs7')
     encrypt_aes = aes.encrypt(pad_pkcs7)
     # 加密结果
-    encrypted_text = str(base64.encodebytes(encrypt_aes), encoding='utf-8')  # 解码
-    encrypted_text_str = encrypted_text.replace("\n", "")
-    # 此处我的输出结果老有换行符，所以用了临时方法将它剔除
-    return encrypted_text_str
-
+    encrypted_text = str(base64.b64encode(encrypt_aes), encoding='utf-8')  # 解码
+    return encrypted_text
+# 解密
+def aes_decode(key,text):
+    # 初始化加密器，本例采用ECB加密模式
+    aes = AES.new(str.encode(key), AES.MODE_ECB)
+    # 解密
+    decrypted_text = aes.decrypt(base64.decodebytes(bytes(text, encoding='utf8'))).decode("utf8")
+    # 去除多余补位
+    decrypted_text = decrypted_text[:-ord(decrypted_text[-1])]
+    return decrypted_text
 """
 用第三方提供的接口方法实现aes解密,参数可配置
 """
@@ -52,11 +51,6 @@ def aes_de(yaoshi,shuju):
     # 返回加密后的数据,列表形式
     return jiemihou
 
-"""
-rsa公钥加密，生成16位随机数作为钥匙，然后用rsa的公钥加密钥匙
-参考
-https://www.cnblogs.com/masako/p/7660418.html
-"""
 class Rsa:
     # 随机生成16位密钥,并转换为bytes类型
     ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 16))
@@ -95,17 +89,4 @@ class Rsa:
         b64str = base64.b64encode(crypto)
         mikey=str(b64str,encoding='utf-8')
         return mikey
-
-# aes解密 解密后是字符串，如果要用需要对字符串做处理
-def aes_decode(key,text):
-    while len(text) % 16 != 0:
-        text += '\0'
-    # 返回bytes
-    # text=str.encode(text)
-    key=str.encode(key)
-    # 初始化加密器
-    aes = AES.new(key, AES.MODE_ECB)
-    text_decrypted = str(aes.decrypt(base64.decodebytes(bytes(text, encoding='utf8'))).rstrip(b'\0').decode("utf8"))
-    # 返回解密后的数据，字符串
-    return text_decrypted
 

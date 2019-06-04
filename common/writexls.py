@@ -32,9 +32,8 @@ class wtxls:
     有多列多行数据的情况
     """
     def manyrow(self,n):
-        row= ['phone','cardid','bankid','name']
-
         # 写表头
+        row= ['phone','cardid','bankid','name']
         for t in range(0, len(row)):
             sheet1.write(0, t, row[t])
         # 写表数据

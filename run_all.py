@@ -70,7 +70,6 @@ def send_mail():
 if __name__ == "__main__":
     # 构造测试集
     suite = unittest.defaultTestLoader.discover(case_path,'test*.py')
-    # suite = unittest.defaultTestLoader.discover(case_path, 'test_login.py')
     # 获取当前时间
     now = time.strftime('%Y-%m-%d %H_%M_%S')
     newreport = report_path + now + 'report.html'

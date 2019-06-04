@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a94990f0-276c-4cd4-b608-186d0a231f2b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/graphcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nomi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testcase/test_comorgcertify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testcase/test_logwithtx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testcase/test_modifymobile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/configDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/configDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/configHttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/configHttp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/rsa_aes.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/rsa_aes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/writexls.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/writexls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/method.py" beforeDir="false" afterPath="$PROJECT_DIR$/method.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_all.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/test_forgotpwd.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/test_forgotpwd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/test_modifylogpwd.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/test_modifylogpwd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/test_personcertify.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/test_personcertify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/test_regist.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/test_regist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/test_revisemail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/test_revisemail.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,79 +31,127 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/interfacetest666$check.coverage" NAME="check Coverage Results" MODIFIED="1548388282031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
-    <SUITE FILE_PATH="coverage/interfacetest666$runall.coverage" NAME="runall Coverage Results" MODIFIED="1548320351799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$graphlogin.coverage" NAME="graphlogin Coverage Results" MODIFIED="1559287631249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$configDB.coverage" NAME="configDB Coverage Results" MODIFIED="1559626562743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_regist_testzpg_test04.coverage" NAME="Unittests for test_regist.testzpg.test04 Coverage Results" MODIFIED="1559207911696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$writexls.coverage" NAME="writexls Coverage Results" MODIFIED="1555054945519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/interfacetest666$runall_app.coverage" NAME="runall_app Coverage Results" MODIFIED="1550913813830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/interfacetest666$ui.coverage" NAME="ui Coverage Results" MODIFIED="1550226203930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/case" />
     <SUITE FILE_PATH="coverage/myautotest$Unittests_in_test_p2pc_py.coverage" NAME="Unittests in test_p2pc.py Coverage Results" MODIFIED="1557989427156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_testzpg_test1.coverage" NAME="Unittests for test_login.testzpg.test1 Coverage Results" MODIFIED="1559527559285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_lg3_py.coverage" NAME="Unittests in test_logwithtx.py Coverage Results" MODIFIED="1559296713408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$generator.coverage" NAME="generator Coverage Results" MODIFIED="1553413689893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$graphcode.coverage" NAME="graphcode Coverage Results" MODIFIED="1559299506952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_forgotpwd_testzgp_test09.coverage" NAME="Unittests for test_forgotpwd.testzgp.test09 Coverage Results" MODIFIED="1559274777618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$testaes.coverage" NAME="testaes Coverage Results" MODIFIED="1551161543847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
+    <SUITE FILE_PATH="coverage/interfacetest666$manybuy.coverage" NAME="manybuy Coverage Results" MODIFIED="1546849686317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_testzpg_test11.coverage" NAME="Unittests for test_login.testzpg.test11 Coverage Results" MODIFIED="1559287665394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$Unittests_for_test_Login.coverage" NAME="Unittests for test.Login Coverage Results" MODIFIED="1545811100087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_comorgcertify_testzpg_test5.coverage" NAME="Unittests for test_comorgcertify.testzpg.test5 Coverage Results" MODIFIED="1559619266378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_forgotpwd_testzgp_test08.coverage" NAME="Unittests for test_forgotpwd.testzgp.test08 Coverage Results" MODIFIED="1559281588633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$run_all.coverage" NAME="run_all Coverage Results" MODIFIED="1558496024354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_forgotpwd_testzgp_test02.coverage" NAME="Unittests for test_forgotpwd.testzgp.test02 Coverage Results" MODIFIED="1559270763737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_testzpg_test10.coverage" NAME="Unittests for test_login.testzpg.test10 Coverage Results" MODIFIED="1559293559515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$charcount.coverage" NAME="charcount Coverage Results" MODIFIED="1550650993575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
+    <SUITE FILE_PATH="coverage/interfacetest666$manylogin.coverage" NAME="manylogin Coverage Results" MODIFIED="1546064745029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_regist_testzpg_test03.coverage" NAME="Unittests for test_regist.testzpg.test03 Coverage Results" MODIFIED="1559207703886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$insurance.coverage" NAME="insurance Coverage Results" MODIFIED="1546073615674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/interface" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$zgpuser__1_.coverage" NAME="zgpuser Coverage Results" MODIFIED="1558520788851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_testzpg_test9.coverage" NAME="Unittests for test_login.testzpg.test9 Coverage Results" MODIFIED="1559290556602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$method.coverage" NAME="method Coverage Results" MODIFIED="1559024381691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_regist_testzpg_test09.coverage" NAME="Unittests for test_regist.testzpg.test09 Coverage Results" MODIFIED="1559208100029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_forgotpwd_testzgp_test07.coverage" NAME="Unittests for test_forgotpwd.testzgp.test07 Coverage Results" MODIFIED="1559282181914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_login_py.coverage" NAME="Unittests in test_login.py Coverage Results" MODIFIED="1559294258669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_testzpg_test91.coverage" NAME="Unittests for test_login.testzpg.test91 Coverage Results" MODIFIED="1559294166559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/myautotest$rsa_aes.coverage" NAME="rsa_aes Coverage Results" MODIFIED="1558416933105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_TestLogin_test1.coverage" NAME="Unittests for test_login.TestLogin.test1 Coverage Results" MODIFIED="1559619147825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_modifymobile_testzpg_test1.coverage" NAME="Unittests for test_modifymobile.testzpg.test1 Coverage Results" MODIFIED="1559527810084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$Unittests_for_test_TestFoo_testLess.coverage" NAME="Unittests for test.TestFoo.testLess Coverage Results" MODIFIED="1545807711857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_personcertify_TestPercerty_test5.coverage" NAME="Unittests for test_personcertify.TestPercerty.test5 Coverage Results" MODIFIED="1559546958342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_forgotpwd_py.coverage" NAME="Unittests in test_forgotpwd.py Coverage Results" MODIFIED="1559293103074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/myautotest$run_mail.coverage" NAME="run_mail Coverage Results" MODIFIED="1557390116903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/interfacetest666$manyregister.coverage" NAME="manyregister Coverage Results" MODIFIED="1547004138325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
+    <SUITE FILE_PATH="coverage/interfacetest666$mcharge.coverage" NAME="mcharge Coverage Results" MODIFIED="1547104023383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
+    <SUITE FILE_PATH="coverage/myautotest$Unittests_in_pctest_py.coverage" NAME="Unittests in pctest.py Coverage Results" MODIFIED="1557391404274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pcui" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_forgotpwd_testzgp_test05.coverage" NAME="Unittests for test_forgotpwd.testzgp.test05 Coverage Results" MODIFIED="1559272149668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_revisemail_py.coverage" NAME="Unittests in test_revisemail.py Coverage Results" MODIFIED="1558670044472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$app.coverage" NAME="app Coverage Results" MODIFIED="1555469782100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/uiautomator" />
+    <SUITE FILE_PATH="coverage/myautotest$zhaoguapai.coverage" NAME="zhaoguapai Coverage Results" MODIFIED="1558411681662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/funcion" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$rsa_aes.coverage" NAME="rsa_aes Coverage Results" MODIFIED="1559186799661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_regist_testzpg_test06.coverage" NAME="Unittests for test_regist.testzpg.test06 Coverage Results" MODIFIED="1559207951338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$buy.coverage" NAME="buy Coverage Results" MODIFIED="1546077038242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
+    <SUITE FILE_PATH="coverage/interfacetest666$QQmusic.coverage" NAME="QQmusic Coverage Results" MODIFIED="1547535594407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
+    <SUITE FILE_PATH="coverage/interfacetest666$appfortest.coverage" NAME="appfortest Coverage Results" MODIFIED="1550892776088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/uiautomator" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_testzpg_test2.coverage" NAME="Unittests for test_login.testzpg.test2 Coverage Results" MODIFIED="1559290186768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_modifymobile_py.coverage" NAME="Unittests in test_modifymobile.py Coverage Results" MODIFIED="1559299529796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_comorgcertify_testzpg_test7.coverage" NAME="Unittests for test_comorgcertify.testzpg.test7 Coverage Results" MODIFIED="1559626798463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/interfacetest666$runall.coverage" NAME="runall Coverage Results" MODIFIED="1548320351799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_personcertify_TestPercerty_test3.coverage" NAME="Unittests for test_personcertify.TestPercerty.test3 Coverage Results" MODIFIED="1559546532373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_testzpg_test4.coverage" NAME="Unittests for test_login.testzpg.test4 Coverage Results" MODIFIED="1559291151396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/myautotest$tt.coverage" NAME="tt Coverage Results" MODIFIED="1558251376146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_regist_testzpg_test07.coverage" NAME="Unittests for test_regist.testzpg.test07 Coverage Results" MODIFIED="1559207986514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$configHttp.coverage" NAME="configHttp Coverage Results" MODIFIED="1546075320440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/myautotest$test.coverage" NAME="test Coverage Results" MODIFIED="1558411520591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_componycertify_testzpg_test3.coverage" NAME="Unittests for test_componycertify.testzpg.test3 Coverage Results" MODIFIED="1559555978915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_logwithtx_testzpg_test3.coverage" NAME="Unittests for test_logwithtx.testzpg.test3 Coverage Results" MODIFIED="1559296641971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_in_test_py.coverage" NAME="Unittests in test.py Coverage Results" MODIFIED="1545882343616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/interfacetest666$generator.coverage" NAME="generator Coverage Results" MODIFIED="1553413689893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/interfacetest666$sendmail.coverage" NAME="sendmail Coverage Results" MODIFIED="1547807217311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_modifymobile_testzpg_test2.coverage" NAME="Unittests for test_modifymobile.testzpg.test2 Coverage Results" MODIFIED="1559527599368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_modifylogpwd_testzpg_test2.coverage" NAME="Unittests for test_modifylogpwd.testzpg.test2 Coverage Results" MODIFIED="1559210378465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_for_test_p2p_testp2p_test_regist.coverage" NAME="Unittests for test_p2p.testp2p.test_regist Coverage Results" MODIFIED="1547715597313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/myautotest$P2P.coverage" NAME="P2P Coverage Results" MODIFIED="1557396546109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pcui" />
     <SUITE FILE_PATH="coverage/myautotest$Unittests_in_test_tcapp_py.coverage" NAME="Unittests in test_tcapp.py Coverage Results" MODIFIED="1557997205882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_regist_testzpg_test02.coverage" NAME="Unittests for test_regist.testzpg.test02 Coverage Results" MODIFIED="1559207598384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/myautotest$Unittests_in_test_login_py.coverage" NAME="Unittests in test_login.py Coverage Results" MODIFIED="1557370767192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$mopenaccount.coverage" NAME="mopenaccount Coverage Results" MODIFIED="1547027453783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_in_test_p2p_py.coverage" NAME="Unittests in test_p2p.py Coverage Results" MODIFIED="1548319812958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/interfacetest666$testaes.coverage" NAME="testaes Coverage Results" MODIFIED="1551161543847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
-    <SUITE FILE_PATH="coverage/interfacetest666$manybuy.coverage" NAME="manybuy Coverage Results" MODIFIED="1546849686317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
     <SUITE FILE_PATH="coverage/myautotest$rsa_ase.coverage" NAME="rsa_ase Coverage Results" MODIFIED="1558406591132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/funcion" />
-    <SUITE FILE_PATH="coverage/interfacetest666$Unittests_for_test_Login.coverage" NAME="Unittests for test.Login Coverage Results" MODIFIED="1545811100087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$test.coverage" NAME="test Coverage Results" MODIFIED="1558952752699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_regist_testzpg_test08.coverage" NAME="Unittests for test_regist.testzpg.test08 Coverage Results" MODIFIED="1559208068901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_personcertify_TestPercerty_test2.coverage" NAME="Unittests for test_personcertify.TestPercerty.test2 Coverage Results" MODIFIED="1559546211030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$test.coverage" NAME="test Coverage Results" MODIFIED="1559616775293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_for_test_TestFoo.coverage" NAME="Unittests for test.TestFoo Coverage Results" MODIFIED="1545807654609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$run_all.coverage" NAME="run_all Coverage Results" MODIFIED="1558496024354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/interfacetest666$charcount.coverage" NAME="charcount Coverage Results" MODIFIED="1550650993575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
     <SUITE FILE_PATH="coverage/interfacetest666$system.coverage" NAME="system Coverage Results" MODIFIED="1548211240483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_in_test_app_py.coverage" NAME="Unittests in test_app.py Coverage Results" MODIFIED="1551078179544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/interfacetest666$manylogin.coverage" NAME="manylogin Coverage Results" MODIFIED="1546064745029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_modifylogpwd_testzpg_test3.coverage" NAME="Unittests for test_modifylogpwd.testzpg.test3 Coverage Results" MODIFIED="1559210612521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$p2puser.coverage" NAME="p2puser Coverage Results" MODIFIED="1555056002342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
     <SUITE FILE_PATH="coverage/interfacetest666$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1557235759419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zhaoguapai$methodfortest.coverage" NAME="method Coverage Results" MODIFIED="1558518668754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myautotest$redis.coverage" NAME="redis Coverage Results" MODIFIED="1558339150435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/funcion" />
     <SUITE FILE_PATH="coverage/interfacetest666$P2P.coverage" NAME="P2P Coverage Results" MODIFIED="1555056010714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
-    <SUITE FILE_PATH="coverage/interfacetest666$insurance.coverage" NAME="insurance Coverage Results" MODIFIED="1546073615674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/interface" />
     <SUITE FILE_PATH="coverage/interfacetest666$login.coverage" NAME="login Coverage Results" MODIFIED="1553005200356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$zgpuser__1_.coverage" NAME="zgpuser Coverage Results" MODIFIED="1558520788851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$method.coverage" NAME="method Coverage Results" MODIFIED="1558954013717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_forgotpwd_testzgp_test04.coverage" NAME="Unittests for test_forgotpwd.testzgp.test04 Coverage Results" MODIFIED="1559271764714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$run_mail.coverage" NAME="run_mail Coverage Results" MODIFIED="1557235012912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_modifylogpwd_testzpg_test1.coverage" NAME="Unittests for test_modifylogpwd.testzpg.test1 Coverage Results" MODIFIED="1559210389624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$runapp.coverage" NAME="runapp Coverage Results" MODIFIED="1550736390231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$configDB.coverage" NAME="configDB Coverage Results" MODIFIED="1554212169653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_for_test_Login_testLess.coverage" NAME="Unittests for test.Login.testLess Coverage Results" MODIFIED="1545813778281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_login_py.coverage" NAME="Unittests in test_login.py Coverage Results" MODIFIED="1558495819084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_personcertify_py.coverage" NAME="Unittests in test_personcertify.py Coverage Results" MODIFIED="1558595306163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/zhaoguapai$zgpuser.coverage" NAME="zgpuser Coverage Results" MODIFIED="1558693793850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_personcertify_py.coverage" NAME="Unittests in test_personcertify.py Coverage Results" MODIFIED="1559547098493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_comorgcertify_testzpg_test6.coverage" NAME="Unittests for test_comorgcertify.testzpg.test6 Coverage Results" MODIFIED="1559619345060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_modifylogpwd_py.coverage" NAME="Unittests in test_modifylogpwd.py Coverage Results" MODIFIED="1559210636382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_forgotpwd_testzgp_test01.coverage" NAME="Unittests for test_forgotpwd.testzgp.test01 Coverage Results" MODIFIED="1559274409973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$Log.coverage" NAME="Log Coverage Results" MODIFIED="1550909902582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
-    <SUITE FILE_PATH="coverage/myautotest$rsa_aes.coverage" NAME="rsa_aes Coverage Results" MODIFIED="1558416933105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/myautotest$forpctest.coverage" NAME="forpctest Coverage Results" MODIFIED="1557391509449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pcui" />
     <SUITE FILE_PATH="coverage/myautotest$zgpuser.coverage" NAME="zgpuser Coverage Results" MODIFIED="1558421037098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/interfacetest666$ddd.coverage" NAME="ddd Coverage Results" MODIFIED="1552374082777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/case" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_modifymobile_testzpg_test5.coverage" NAME="Unittests for test_modifymobile.testzpg.test5 Coverage Results" MODIFIED="1559530223768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_regist_testzpg_test05.coverage" NAME="Unittests for test_regist.testzpg.test05 Coverage Results" MODIFIED="1559207918835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$sort.coverage" NAME="sort Coverage Results" MODIFIED="1547523156546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../test/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$getexcel.coverage" NAME="getexcel Coverage Results" MODIFIED="1547002830104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_in_runall_app_py.coverage" NAME="Unittests in runall_app.py Coverage Results" MODIFIED="1550729739774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/interfacetest666$Unittests_for_test_TestFoo_testLess.coverage" NAME="Unittests for test.TestFoo.testLess Coverage Results" MODIFIED="1545807711857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_regist_py.coverage" NAME="Unittests in test_regist.py Coverage Results" MODIFIED="1558492049070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$generator.coverage" NAME="generator Coverage Results" MODIFIED="1558680627680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_forgotpwd_py.coverage" NAME="Unittests in test_forgotpwd.py Coverage Results" MODIFIED="1558938238151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/myautotest$run_mail.coverage" NAME="run_mail Coverage Results" MODIFIED="1557390116903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/interfacetest666$manyregister.coverage" NAME="manyregister Coverage Results" MODIFIED="1547004138325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_regist_py.coverage" NAME="Unittests in test_regist.py Coverage Results" MODIFIED="1559208108798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$generator.coverage" NAME="generator Coverage Results" MODIFIED="1559200934624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/interfacetest666$deal_diff.coverage" NAME="deal_diff Coverage Results" MODIFIED="1551323045289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
-    <SUITE FILE_PATH="coverage/interfacetest666$mcharge.coverage" NAME="mcharge Coverage Results" MODIFIED="1547104023383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_componycertify_py.coverage" NAME="Unittests in test_componycertify.py Coverage Results" MODIFIED="1559023883341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_login_testzpg_test8.coverage" NAME="Unittests for test_login.testzpg.test8 Coverage Results" MODIFIED="1559290417168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$111.coverage" NAME="111 Coverage Results" MODIFIED="1550736367387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/myautotest$Unittests_in_pctest_py.coverage" NAME="Unittests in pctest.py Coverage Results" MODIFIED="1557391404274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pcui" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_in_test_revisemail_py.coverage" NAME="Unittests in test_revisemail.py Coverage Results" MODIFIED="1558670044472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_personcertify_TestPercerty_test4.coverage" NAME="Unittests for test_personcertify.TestPercerty.test4 Coverage Results" MODIFIED="1559546717488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$Unittests_for_test_logwithtx_testzpg_test4.coverage" NAME="Unittests for test_logwithtx.testzpg.test4 Coverage Results" MODIFIED="1559296527797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
     <SUITE FILE_PATH="coverage/interfacetest666$test.coverage" NAME="test Coverage Results" MODIFIED="1556535913145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/interfacetest666$app.coverage" NAME="app Coverage Results" MODIFIED="1555469782100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/uiautomator" />
     <SUITE FILE_PATH="coverage/interfacetest666$Unittests_in_test_login_py.coverage" NAME="Unittests in test_login.py Coverage Results" MODIFIED="1557234995159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
-    <SUITE FILE_PATH="coverage/myautotest$zhaoguapai.coverage" NAME="zhaoguapai Coverage Results" MODIFIED="1558411681662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/funcion" />
-    <SUITE FILE_PATH="coverage/zhaoguapai$rsa_aes.coverage" NAME="rsa_aes Coverage Results" MODIFIED="1558953526856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
-    <SUITE FILE_PATH="coverage/interfacetest666$buy.coverage" NAME="buy Coverage Results" MODIFIED="1546077038242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/selenium" />
-    <SUITE FILE_PATH="coverage/interfacetest666$QQmusic.coverage" NAME="QQmusic Coverage Results" MODIFIED="1547535594407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/funcion" />
     <SUITE FILE_PATH="coverage/myautotest$lottery.coverage" NAME="lottery Coverage Results" MODIFIED="1558252216570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/funcion" />
     <SUITE FILE_PATH="coverage/interfacetest666$readConfig.coverage" NAME="readConfig Coverage Results" MODIFIED="1545730476284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/interfacetest666$appfortest.coverage" NAME="appfortest Coverage Results" MODIFIED="1550892776088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testfile/uiautomator" />
+    <SUITE FILE_PATH="coverage/zhaoguapai$nomi.coverage" NAME="nomi Coverage Results" MODIFIED="1559299297520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -108,77 +170,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
+        <entry file="file://$PROJECT_DIR$/testcase/test_login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="735">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/method.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="451" selection-start-line="451" selection-end-line="451" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-                <element signature="e#339#1196#0" />
-                <element signature="e#1229#1655#0" />
-                <element signature="e#1721#2672#0" />
-                <element signature="e#3928#4524#0" />
-                <element signature="e#4564#4988#0" />
-                <element signature="e#5066#5839#0" />
-                <element signature="e#5921#6705#0" />
-                <element signature="e#6782#7510#0" />
-                <element signature="e#7661#9077#0" />
-                <element signature="e#9141#9813#0" />
-                <element signature="e#9903#10511#0" />
-                <element signature="e#10594#11346#0" />
-                <element signature="e#11487#13323#0" />
-                <element signature="e#13381#14092#0" />
-                <element signature="e#14163#14825#0" />
-                <element signature="e#14900#15561#0" />
-                <element signature="e#15771#17348#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zgpuser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
-              <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/generator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1348">
-              <caret line="102" column="8" lean-forward="true" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/common/rsa_aes.py">
+        <entry file="file://$PROJECT_DIR$/testcase/test_comorgcertify.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1078">
-              <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+            <state relative-caret-position="118">
+              <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/configDB.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="71" column="24" lean-forward="true" selection-start-line="67" selection-start-column="2" selection-end-line="71" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#169#376#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nomi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-939">
+              <caret line="214" column="31" selection-start-line="214" selection-start-column="31" selection-end-line="214" selection-end-column="31" />
+              <folding>
+                <element signature="e#1#30#0" expanded="true" />
+                <element signature="e#238#986#0" />
+                <element signature="e#1031#1528#0" />
+                <element signature="e#1611#2231#0" />
+                <element signature="e#2278#2708#0" />
+                <element signature="e#2786#3423#0" />
+                <element signature="e#3505#4152#0" />
               </folding>
             </state>
           </provider>
@@ -204,17 +244,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testfile/funcion/user.py" />
-        <option value="$PROJECT_DIR$/common/getexcel.py" />
-        <option value="$PROJECT_DIR$/testfile/selenium/manybuy.py" />
-        <option value="$PROJECT_DIR$/testfile/funcion/jiami.py" />
-        <option value="$PROJECT_DIR$/common/aes_mi.py" />
-        <option value="$PROJECT_DIR$/testfile/funcion/redis.py" />
-        <option value="$PROJECT_DIR$/common/writexls.py" />
-        <option value="$PROJECT_DIR$/testfile/uiautomator/app.py" />
-        <option value="$PROJECT_DIR$/testfile/funcion/p2puser.py" />
-        <option value="$PROJECT_DIR$/testfile/selenium/P2P.py" />
-        <option value="$PROJECT_DIR$/testfile/funcion/facetoface.py" />
         <option value="$PROJECT_DIR$/runall_app.py" />
         <option value="$PROJECT_DIR$/common/getexcel.py" />
         <option value="$PROJECT_DIR$/run_mail.py" />
@@ -223,7 +252,6 @@
         <option value="$PROJECT_DIR$/pcui/forpctest.py" />
         <option value="$PROJECT_DIR$/testcase/test_p2pc.py" />
         <option value="$PROJECT_DIR$/testcase/test_tcapp.py" />
-        <option value="$PROJECT_DIR$/common/configDB.py" />
         <option value="$PROJECT_DIR$/tt.py" />
         <option value="$PROJECT_DIR$/funcion/lottery.py" />
         <option value="$PROJECT_DIR$/funcion/p2puser.py" />
@@ -238,23 +266,35 @@
         <option value="$PROJECT_DIR$/funcion/zgpuser.py" />
         <option value="$PROJECT_DIR$/methodfortest.py" />
         <option value="$PROJECT_DIR$/common/HTMLTestReportCN.py" />
-        <option value="$PROJECT_DIR$/run_all.py" />
-        <option value="$PROJECT_DIR$/common/configHttp.py" />
-        <option value="$PROJECT_DIR$/common/configHttp.py" />
         <option value="$PROJECT_DIR$/readConfig.py" />
-        <option value="$PROJECT_DIR$/config.ini" />
-        <option value="$PROJECT_DIR$/testcase/test_login.py" />
-        <option value="$PROJECT_DIR$/testcase/test_personcertify.py" />
-        <option value="$PROJECT_DIR$/testcase/test_modifylogpwd.py" />
-        <option value="$PROJECT_DIR$/common/generator.py" />
         <option value="$PROJECT_DIR$/zgpuser.py" />
-        <option value="$PROJECT_DIR$/testcase/test_forgotpwd.py" />
         <option value="$PROJECT_DIR$/testcase/test_revisemail.py" />
-        <option value="$PROJECT_DIR$/testcase/test_regist.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/method.py" />
+        <option value="$USER_HOME$/PycharmProjects/myautotest/common/rsa_aes.py" />
+        <option value="$PROJECT_DIR$/common/configHttp.py" />
+        <option value="$PROJECT_DIR$/common/configHttp.py" />
         <option value="$PROJECT_DIR$/common/rsa_aes.py" />
+        <option value="$PROJECT_DIR$/method.py" />
+        <option value="$PROJECT_DIR$/graphlogin.py" />
+        <option value="$PROJECT_DIR$/graphforgetpwd.py" />
+        <option value="$PROJECT_DIR$/config.ini" />
+        <option value="$PROJECT_DIR$/testcase/test_lg3.py" />
+        <option value="$PROJECT_DIR$/graphcode.py" />
+        <option value="$PROJECT_DIR$/common/writexls.py" />
+        <option value="$PROJECT_DIR$/testcase/test_regist.py" />
+        <option value="$PROJECT_DIR$/testcase/test_logwithtx.py" />
+        <option value="$PROJECT_DIR$/testcase/test_modifylogpwd.py" />
+        <option value="$PROJECT_DIR$/testcase/test_modifymobile.py" />
+        <option value="$PROJECT_DIR$/testcase/test_forgotpwd.py" />
+        <option value="$PROJECT_DIR$/run_all.py" />
+        <option value="$PROJECT_DIR$/testcase/test_login.py" />
+        <option value="$PROJECT_DIR$/common/generator.py" />
+        <option value="$PROJECT_DIR$/testcase/test_personcertify.py" />
+        <option value="$PROJECT_DIR$/testcase/test_componycertify.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/nomi.py" />
+        <option value="$PROJECT_DIR$/common/configDB.py" />
+        <option value="$PROJECT_DIR$/testcase/test_comorgcertify.py" />
       </list>
     </option>
   </component>
@@ -269,6 +309,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,18 +325,12 @@
             <path>
               <item name="zhaoguapai" type="b2602c69:ProjectViewProjectNode" />
               <item name="zhaoguapai" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhaoguapai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhaoguapai" type="462c0819:PsiDirectoryNode" />
               <item name="testcase" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -327,30 +362,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.method">
-    <configuration name="method" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="zhaoguapai" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/method.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="rsa_aes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python tests.Unittests for test_comorgcertify.testzpg.test7">
+    <configuration name="configDB" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="zhaoguapai" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -363,7 +376,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/rsa_aes.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/configDB.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -372,51 +385,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="zhaoguapai" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="zgpuser" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="zhaoguapai" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zgpuser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in test_forgotpwd.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_comorgcertify.testzpg.test5" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="zhaoguapai" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -427,24 +396,69 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/testcase/test_forgotpwd.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_comorgcertify.testzpg.test5&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_comorgcertify.testzpg.test6" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="zhaoguapai" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_comorgcertify.testzpg.test6&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_comorgcertify.testzpg.test7" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="zhaoguapai" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_comorgcertify.testzpg.test7&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_login.TestLogin.test1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="zhaoguapai" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_login.TestLogin.test1&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.method" />
-      <item itemvalue="Python.zgpuser" />
-      <item itemvalue="Python.test" />
-      <item itemvalue="Python tests.Unittests in test_forgotpwd.py" />
-      <item itemvalue="Python.rsa_aes" />
+      <item itemvalue="Python tests.Unittests for test_comorgcertify.testzpg.test5" />
+      <item itemvalue="Python tests.Unittests for test_comorgcertify.testzpg.test6" />
+      <item itemvalue="Python tests.Unittests for test_login.TestLogin.test1" />
+      <item itemvalue="Python.configDB" />
+      <item itemvalue="Python tests.Unittests for test_comorgcertify.testzpg.test7" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.method" />
-        <item itemvalue="Python.rsa_aes" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python tests.Unittests in test_forgotpwd.py" />
-        <item itemvalue="Python.zgpuser" />
+        <item itemvalue="Python tests.Unittests for test_comorgcertify.testzpg.test7" />
+        <item itemvalue="Python.configDB" />
+        <item itemvalue="Python tests.Unittests for test_comorgcertify.testzpg.test6" />
+        <item itemvalue="Python tests.Unittests for test_comorgcertify.testzpg.test5" />
+        <item itemvalue="Python tests.Unittests for test_login.TestLogin.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -530,7 +544,13 @@
       <workItem from="1558575386211" duration="16369000" />
       <workItem from="1558662081014" duration="22432000" />
       <workItem from="1558878151249" duration="1515000" />
-      <workItem from="1558921129788" duration="16451000" />
+      <workItem from="1558921129788" duration="16954000" />
+      <workItem from="1559007838880" duration="17709000" />
+      <workItem from="1559098159005" duration="16467000" />
+      <workItem from="1559184026868" duration="15775000" />
+      <workItem from="1559267299958" duration="21761000" />
+      <workItem from="1559527067442" duration="16371000" />
+      <workItem from="1559612368944" duration="7828000" />
     </task>
     <task id="LOCAL-00001" summary="更新pc测试用例的模版">
       <created>1557989617822</created>
@@ -742,43 +762,50 @@
       <option name="project" value="LOCAL" />
       <updated>1558938607462</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="修改解密">
+      <created>1558954147974</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1558954147974</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_login_py - 2019.05.22 at 11h 30m 23s.xml">
-      <configuration name="Unittests in test_login.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test5 - 2019.06.04 at 11h 27m 01s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test5" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_personcertify_py - 2019.05.23 at 15h 07m 22s.xml">
-      <configuration name="Unittests in test_personcertify.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test5 - 2019.06.04 at 11h 30m 33s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test5" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_personcertify_py - 2019.05.23 at 15h 07m 55s.xml">
-      <configuration name="Unittests in test_personcertify.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test6 - 2019.06.04 at 11h 31m 39s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test6" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_personcertify_py - 2019.05.23 at 15h 08m 28s.xml">
-      <configuration name="Unittests in test_personcertify.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_login_TestLogin_test1 - 2019.06.04 at 11h 32m 28s.xml">
+      <configuration name="Unittests for test_login.TestLogin.test1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_revisemail_py - 2019.05.24 at 11h 46m 04s.xml">
-      <configuration name="Unittests in test_revisemail.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test5 - 2019.06.04 at 11h 33m 17s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test5" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_revisemail_py - 2019.05.24 at 11h 46m 26s.xml">
-      <configuration name="Unittests in test_revisemail.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test5 - 2019.06.04 at 11h 34m 28s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test5" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_revisemail_py - 2019.05.24 at 11h 48m 50s.xml">
-      <configuration name="Unittests in test_revisemail.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test6 - 2019.06.04 at 11h 35m 15s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test6" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_revisemail_py - 2019.05.24 at 11h 54m 20s.xml">
-      <configuration name="Unittests in test_revisemail.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test6 - 2019.06.04 at 11h 35m 46s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test6" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_forgotpwd_py - 2019.05.27 at 14h 23m 47s.xml">
-      <configuration name="Unittests in test_forgotpwd.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test7 - 2019.06.04 at 13h 38m 25s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test7" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_forgotpwd_py - 2019.05.27 at 14h 24m 11s.xml">
-      <configuration name="Unittests in test_forgotpwd.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_comorgcertify_testzpg_test7 - 2019.06.04 at 13h 40m 00s.xml">
+      <configuration name="Unittests for test_comorgcertify.testzpg.test7" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="600275000" />
+    <option name="totallyTimeSpent" value="696689000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -793,12 +820,12 @@
     <frame x="0" y="23" width="1440" height="806" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21459228" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23175965" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32913166" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4995958" visible="true" weight="0.27731094" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4995958" visible="true" weight="0.28151262" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32352942" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -855,7 +882,8 @@
     <MESSAGE value="更新method" />
     <MESSAGE value="获取验证码后返回ssesion给其他接口" />
     <MESSAGE value="增加重置登录密码" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加重置登录密码" />
+    <MESSAGE value="修改解密" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改解密" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -885,115 +913,20 @@
           <line>10</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/nomi.py</url>
+          <line>303</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/testcase/test_modifymobile.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testcase/test_tcapp.py" />
-    <entry file="file://$PROJECT_DIR$/funcion/redis.py" />
-    <entry file="file://$PROJECT_DIR$/common/configDB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcion/user.py" />
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tokenize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="446" selection-start-line="446" selection-end-line="446" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcion/zgpuser.py" />
-    <entry file="file://$PROJECT_DIR$/report/2019-05-22 10_30_39report.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/HTMLTestReportCN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="189" column="31" selection-start-line="189" selection-start-column="31" selection-end-line="189" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/2019-05-22 11_30_48report.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/HTMLReport.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="38" column="3" lean-forward="true" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Crypto/Cipher/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="339" selection-start-line="339" selection-end-line="339" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.3/python_stubs/-1199943126/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="143" column="4" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/myautotest/common/rsa_aes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-672">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/2019_05_24.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="879" selection-start-line="879" selection-end-line="879" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_bootlocale.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/Log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -1032,13 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Crypto/Cipher/AES.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="230" selection-start-line="230" selection-end-line="230" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Crypto/Util/Padding.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -1064,13 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="170" selection-start-line="170" selection-end-line="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/base64.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
@@ -1102,16 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/configHttp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/myautotest/funcion/p2puser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -1129,17 +1038,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_all.py">
+    <entry file="file://$PROJECT_DIR$/log/2019_05_27.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/myautotest/common/rsa_aes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        <state relative-caret-position="303">
+          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/test_personcertify.py">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Crypto/Cipher/AES.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="166">
+          <caret line="231" selection-start-line="231" selection-end-line="231" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Crypto/Cipher/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/base64.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="512" selection-start-line="512" selection-end-line="512" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Crypto/Util/_raw_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/rsa_aes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1124#2490#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="352" selection-start-line="352" selection-end-line="352" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/2019_05_30.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Cipher_AES.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zgpuser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-534">
+          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_revisemail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphlogin.py" />
+    <entry file="file://$PROJECT_DIR$/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/configHttp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphcode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="129" column="22" selection-start-line="129" selection-start-column="22" selection-end-line="129" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#789#2027#0" />
+            <element signature="e#2123#3857#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/getexcel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520">
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/writexls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_logwithtx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -1148,41 +1186,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testcase/test_modifylogpwd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="15">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/test_login.py">
+    <entry file="file://$PROJECT_DIR$/testcase/test_modifymobile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="60">
+          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/test_revisemail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/2019_05_27.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/testcase/test_forgotpwd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="45">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -1191,75 +1216,131 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testcase/test_regist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
+        <state relative-caret-position="-68">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/generator.py">
+    <entry file="file://$PROJECT_DIR$/report/report.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/myautotest/common/generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1348">
-          <caret line="102" column="8" lean-forward="true" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="8" />
+        <state relative-caret-position="210">
+          <caret line="115" column="15" lean-forward="true" selection-start-line="105" selection-end-line="115" selection-end-column="15" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zgpuser.py">
+    <entry file="file://$PROJECT_DIR$/testcase/test_personcertify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
+        <state relative-caret-position="672">
+          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/method.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="451" selection-start-line="451" selection-end-line="451" />
+        <state relative-caret-position="-1618">
+          <caret line="190" column="46" selection-start-line="190" selection-start-column="46" selection-end-line="190" selection-end-column="46" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#339#1196#0" />
-            <element signature="e#1229#1655#0" />
-            <element signature="e#1721#2672#0" />
-            <element signature="e#3928#4524#0" />
-            <element signature="e#4564#4988#0" />
-            <element signature="e#5066#5839#0" />
-            <element signature="e#5921#6705#0" />
-            <element signature="e#6782#7510#0" />
-            <element signature="e#7661#9077#0" />
-            <element signature="e#9141#9813#0" />
-            <element signature="e#9903#10511#0" />
-            <element signature="e#10594#11346#0" />
-            <element signature="e#11487#13323#0" />
-            <element signature="e#13381#14092#0" />
-            <element signature="e#14163#14825#0" />
-            <element signature="e#14900#15561#0" />
-            <element signature="e#15771#17348#0" />
+            <element signature="e#339#1175#0" />
+            <element signature="e#1258#2207#0" />
+            <element signature="e#2256#2856#0" />
+            <element signature="e#2896#3320#0" />
+            <element signature="e#3398#4171#0" />
+            <element signature="e#5993#7409#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/rsa_aes.py">
+    <entry file="file://$PROJECT_DIR$/run_all.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+        <state relative-caret-position="212">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="e#33#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="101" selection-start-line="101" selection-end-line="106" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/unittest/__init__.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="242" column="8" selection-start-line="242" selection-start-column="8" selection-end-line="242" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nomi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-939">
+          <caret line="214" column="31" selection-start-line="214" selection-start-column="31" selection-end-line="214" selection-end-column="31" />
+          <folding>
+            <element signature="e#1#30#0" expanded="true" />
+            <element signature="e#238#986#0" />
+            <element signature="e#1031#1528#0" />
+            <element signature="e#1611#2231#0" />
+            <element signature="e#2278#2708#0" />
+            <element signature="e#2786#3423#0" />
+            <element signature="e#3505#4152#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/configDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="71" column="24" lean-forward="true" selection-start-line="67" selection-start-column="2" selection-end-line="71" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#169#376#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_comorgcertify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

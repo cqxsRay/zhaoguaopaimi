@@ -1,40 +1,19 @@
-import json
-from common import rsa_aes
-import redis
-import json
-from common import rsa_aes
-from common import configHttp
-import readConfig
-from common import Log
-from common import generator
-config = readConfig.ReadConfig()
-content = configHttp.ConfigHttp()
-a=rsa_aes.Rsa()
-log=Log.Log()
-def loginforothers(mobile,logpwd,utype=1):
-    """
+import unittest
+from common import HTMLTestReportCN
+from testcase import test_login
+from testcase.test_login import TestLogin
+from testcase.test_regist import TestRegist
+import os
 
-    :param mobile: 手机号
-    :param logpwd: 密码
-    :param utype: 用户类型
-    :return:
-    """
-    content.set_url("/property/api/v1/user/login")
-    content.set_headers({'channel': 'pc',
-                         'deviceToken': b'0000000', 'imei': b'0000000',
-                         'source': 'WEB', 'version': '0.0.0',
-                         "Content-Type": "application/json"})
-    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'regNo':mobile,'loginPassword':logpwd,'userType':utype})),
-                      'key': a.pubkey()})
-    user = content.post().json()
-    if user['status']!='00000000':
-        return
 
-    else:
-        # 将服务端返回的密文解密
-        data=rsa_aes.aes_decode(a.ran_str,user['data'])
-        # 处理解密后的数据
-        data="".join([data.strip().rsplit('}',1)[0],"}"])
-        token=json.loads(data)['accessToken']
-        print(token)
-# loginforothers('14711234560','123456',2)
+if __name__=='__main__':
+    suite=unittest.TestSuite()
+    # suite1= unittest.TestLoader().loadTestsFromTestCase(TestLogin)
+    # suite2=unittest.TestLoader().loadTestsFromTestCase(TestRegist)
+    # suite.addTest(unittest.TestLoader().loadTestsFromModule(test_login))
+
+    runner=unittest.TextTestRunner(verbosity=2)
+    # runner=HTMLTestReportCN.HTMLTestRunner(title='自动化测试报告',description='用例执行情况：',
+    #                                          stream=open(newreport, 'wb'),verbosity=2)
+    runner.run(suite)
+

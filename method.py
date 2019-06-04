@@ -12,7 +12,7 @@ log=Log.Log()
 
 
 # 注册 加密
-def regist(logname,mobile,logpwd,cfpwd,utype=1,smstype=1,smscode='000000'):
+def regist(logname,mobile,logpwd,cfpwd,utype=1,smscode='000000',smstype=1):
     """
 
     :param cfpwd: 确认登录密码
@@ -25,7 +25,7 @@ def regist(logname,mobile,logpwd,cfpwd,utype=1,smstype=1,smscode='000000'):
     :return:
     """
     content.set_url("/property/api/v1/user/regist")
-    content.set_headers({'accessToken':'3255','channel':'pc',
+    content.set_headers({'channel':'pc',
                          'deviceToken':b'0000000','imei':b'0000000',
                          'source':'WEB','version':'0.0.0',
                          "Content-Type": "application/json"})
@@ -34,47 +34,6 @@ def regist(logname,mobile,logpwd,cfpwd,utype=1,smstype=1,smscode='000000'):
                     'smsAuthCode':smscode,'userType':utype})),
                       'key':a.pubkey()})
     return content.post().json()
-# 获取图形验证码
-def getcapture():
-    pool = redis.ConnectionPool(host=config.get_redis('yc_host'), password=config.get_redis('yc_password'))
-    r = redis.Redis(connection_pool=pool)
-    content.set_url("/property/api/v1/user/getCaptcha")
-    req=content.get()
-    # 获取sessionid
-    ssion=req.headers['Set-Cookie'].split(';')[0].split('=')[1]
-    tuxing = r.get("YC:PROPERTY:USER:CAPTCHA:%s"%ssion)
-    tx=str(tuxing, encoding='utf-8')
-    return [tx,req.cookies]
-# 登录,续输入错误密码3次需要输入图形验证码
-
-def logmore(mobile,logpwd,utype=1):
-    """
-
-    :param mobile: 手机号
-    :param logpwd: 登录密码
-    :param code: 图形验证码
-    :param utype: 用户类型
-    :return:
-    """
-    (code, session) = getcapture()
-    content.set_url("/property/api/v1/user/login")
-    content.set_headers({'channel': 'pc',
-                         'deviceToken': b'0000000', 'imei': b'0000000',
-                         'source': 'WEB', 'version': '0.0.0',
-                         "Content-Type": "application/json"})
-    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':code, 'regNo':mobile,
-                      'loginPassword':logpwd,'userType':utype})),'key':a.pubkey()})
-    content.set_cookie(session)
-    user = content.post().json()
-    if user['status'] != '00000000':
-        return
-    else:
-        # 将服务端返回的密文解密
-        accesstoken = rsa_aes.aes_de(a.ran_str,user['data'])
-        # 处理解密后的数据
-        at = json.loads(accesstoken[0])['accessToken']
-        # 返回accessToken
-        return at
 
 # 登录,不需要输入图形验证码 给其他需要登录对接口提供token
 def loginforothers(mobile,logpwd,utype=1):
@@ -97,10 +56,9 @@ def loginforothers(mobile,logpwd,utype=1):
         return
 
     else:
-        data = rsa_aes.aes_de(a.ran_str, user['data'])
-        token=json.loads(data[0])['accessToken']
-        # # 将服务端返回的密文解密
-        # data = rsa_aes.aes_decode(a.ran_str, user['data'])
+        # # # 将服务端返回的密文解密 --用需要处理数据的方法解密
+        data = rsa_aes.aes_decode(a.ran_str, user['data'])
+        token = json.loads(data)['accessToken']
         # # 处理解密后的数据
         # data = "".join([data.strip().rsplit('}', 1)[0], "}"])
         # token = json.loads(data)['accessToken']
@@ -110,7 +68,7 @@ def loginforothers(mobile,logpwd,utype=1):
 def login(mobile,logpwd, utype=1):
     """
 
-    :param mobile: 手机号
+    :param mobile: 手机号或用户名
     :param logpwd: 密码
     :param utype: 用户类型
     :return:
@@ -282,14 +240,14 @@ def modifyemail(mobile,logpwd,email,emailcode='000000',emailtype=2):
 def revisemail(mobile,logpwd,oldmail,newmail,oldmailtype=1,newmailtype=2,oldmailcode='000000',newmailcode='000000'):
     """
 
-    :param mobile:
-    :param logpwd:
-    :param oldmail:
-    :param newmail:
-    :param oldmailtype:
-    :param newmailtype:
-    :param oldmailcode:
-    :param newmailcode:
+    :param mobile: 手机号
+    :param logpwd:登录密码
+    :param oldmail: 原邮箱
+    :param newmail: 新邮箱
+    :param oldmailtype: 原邮箱验证码类型
+    :param newmailtype: 新邮箱验证码类型
+    :param oldmailcode: 原邮箱验证码
+    :param newmailcode: 新邮箱验证码
     :return:
     """
     content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
@@ -317,99 +275,7 @@ def revisemail(mobile,logpwd,oldmail,newmail,oldmailtype=1,newmailtype=2,oldmail
                                                                     'emailAuthType':newmailtype})), 'key': a.pubkey()})
     # log.info("修改绑定邮箱为%s，结果是%s" %(newmail,content.post().json()))
     return content.post().json()
-# 忘记登录密码第一步--验证图形验证码
-def vericapcha(mobile,utype=1):
-    """
 
-    :param mobile:
-    :param captcha:
-    :param utype: 个人是1，企业2
-    :return:
-    """
-    (code, session) = getcapture()
-    content.set_headers({'channel': 'pc',
-                         'deviceToken': b'0000000', 'imei': b'0000000',
-                         'source': 'WEB', 'version': '0.0.0',
-                         "Content-Type": "application/json"})
-    content.set_url("/property/api/v1/user/forgetPasswordFirstStep")
-    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'captcha':code,
-                                                                    'userType': utype})), 'key': a.pubkey()})
-
-    content.set_cookie(session)
-    return content.post().json()
-# 忘记密码第二步--验证短信验证码
-def vericode(mobile,smscode='000000',utype=1):
-    """
-    :param mobile: 手机号
-    :param smscode: 短信验证码
-    :param utype: 个人是1，企业2
-    :return:
-    """
-
-    content.set_headers({'channel': 'pc',
-                         'deviceToken': b'0000000', 'imei': b'0000000',
-                         'source': 'WEB', 'version': '0.0.0',
-                         "Content-Type": "application/json"})
-    content.set_url("/property/api/v1/user/forgetPasswordSecondStep")
-    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'smsAuthCode':smscode,
-                                                                    'userType': utype})), 'key': a.pubkey()})
-
-    return content.post().json()
-
-# 忘记密码第三步--重置密码
-def resetpwd(mobile,newPwd,confirmpwd,utype=1):
-    """
-    :param mobile: 手机号
-    :param newPwd: 新密码
-    :param confirmpwd: 确认密码
-    :param utype: 个人是1，企业2
-    :return:
-    """
-
-    content.set_headers({'channel': 'pc',
-                         'deviceToken': b'0000000', 'imei': b'0000000',
-                         'source': 'WEB', 'version': '0.0.0',
-                         "Content-Type": "application/json"})
-    content.set_url("/property/api/v1/user/forgetPasswordThirdStep")
-    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'newPassword':newPwd,
-                                                                    'confirmNewPassword':confirmpwd,
-                                                                    'userType': utype})), 'key': a.pubkey()})
-
-    return content.post().json()
-"""
-忘记登录密码完整流程
-"""
-def forgotpwd(mobile,newPwd,confirmpwd,smscode='000000',utype=1):
-    """
-    :param mobile:
-    :param newPwd:
-    :param confirmpwd:
-    :param smscode:
-    :param utype:
-    :return:
-    """
-    (code, session) = getcapture()
-    content.set_headers({'channel': 'pc',
-                         'deviceToken': b'0000000', 'imei': b'0000000',
-                         'source': 'WEB', 'version': '0.0.0',
-                         "Content-Type": "application/json"})
-    content.set_url("/property/api/v1/user/forgetPasswordFirstStep")
-    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'captcha': code,
-                                                                    'userType': utype})), 'key': a.pubkey()})
-
-    content.set_cookie(session)
-    log.info("第一步验证图形验证码%s"%content.post().json())
-    content.set_url("/property/api/v1/user/forgetPasswordSecondStep")
-    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'smsAuthCode': smscode,
-                                                                    'userType': utype})), 'key': a.pubkey()})
-    log.info("第二步验证短信验证码%s" % content.post().json())
-    content.set_url("/property/api/v1/user/forgetPasswordThirdStep")
-    content.set_data({'content': rsa_aes.aes_cipher(a.ran_str, str({'mobile': mobile, 'newPassword': newPwd,
-                                                                    'confirmNewPassword': confirmpwd,
-                                                                    'userType': utype})), 'key': a.pubkey()})
-    third=content.post().json()
-    log.info("第三步重置密码%s" %third)
-    return third
 
 # 企业用户认证
 def companycertify(mobile,logpwd,city,country,province,addrss,registerAmount,businessScope,realname,cardno,legalPersonName,
@@ -434,7 +300,7 @@ def companycertify(mobile,logpwd,city,country,province,addrss,registerAmount,bus
     :param smscode: 手机验证码
     :return:
     """
-    content.set_headers({'accessToken': loginforothers(mobile, logpwd,2), 'channel': 'pc',
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,2), 'channel': 'pc',
                          'deviceToken': b'0000000', 'imei': b'0000000',
                          'source': 'WEB', 'version': '0.0.0',
                          "Content-Type": "application/json"})
@@ -447,10 +313,11 @@ def companycertify(mobile,logpwd,city,country,province,addrss,registerAmount,bus
                                                                     'orgName':orgName,
                                                                     'cardNo': cardno, 'city': city,
                                                                     'county': country, 'email': email,
-                                                                    'province': province, 'realname': realname})),'key': a.pubkey()})
+                                                                    'province': province, 'realName': realname})),'key': a.pubkey()})
+    return content.post().json()
 
 
-companycertify('14711234560','123456','都发生过','ddafg','dfadsgd','ghfgdhtrhtrhsghr法国是如何','4546457657','etertqerqvtergefdsv',
-              'fgfdg',generator.createidcard(),'regwreg',generator.createidcard(),'ry54y5byy5eb',2,'retykjhg','ewrtyukjyhtgrfe',
-             'edfgfhtfhtd','345@qq.com')
+# companycertify('14711234560','123456','city北京','country北京','pro北京','地址9号公寓楼8801德国大使馆的时光','100000000','经营范围：服装',
+#               '真实姓名练练',generator.createidcard(),'法人真实姓名',generator.createidcard(),'社会统一信用码',2,'htth://www.ddgdg.com',
+#                'url:degregrdg','机构名称','345@qq.com')
 # loginforothers('14711234560','123456',2)

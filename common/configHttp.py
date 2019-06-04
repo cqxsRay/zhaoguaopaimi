@@ -49,7 +49,6 @@ class ConfigHttp:
         :return:
         """
         self.data =json.dumps(data)
-
     # defined http get method
     def get(self):
         """

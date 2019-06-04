@@ -5,9 +5,8 @@ import string
 log=Log()
 # 随机生成手机号
 def createPhone():
-    prelist = ["130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "147", "150", "151", "152", "153",
-               "155", "156", "157", "158", "159", "186", "187", "188"]
-    phone=random.choice(prelist) + "".join(random.choice("0123456789") for i in range(8))
+    prelist = '1471123'
+    phone=prelist + "".join(random.choice("0123456789") for i in range(4))
     log.info("本次生成的手机号为%s"%phone)
     return phone
 
@@ -100,18 +99,23 @@ def createbankid(start_with='622609', total_num=16):
     cardnum += str(0 if t == 10 else t)
     log.info("本次生成的银行卡号为%s"%cardnum)
     return cardnum
-# 随机生成姓名
+# 随机生成姓名 字母与数字组合
 def name():
+    last_name='yuan'
+    name=last_name+''.join(random.sample(string.digits,6))
+    log.info("本次生成的姓名为%s"%name)
+    return name
+# 随机生成真实姓名
+def realname():
     last_name=['赵', '钱', '孙', '李', '周', '吴', '郑', '王', '冯', '陈', '褚', '卫', '蒋', '沈', '韩', '杨', '朱', '秦', '尤', '许',
                   '姚', '邵', '堪', '汪', '祁', '毛', '禹', '狄', '米', '贝', '明', '臧', '计', '伏', '成', '戴', '谈', '宋', '茅', '庞',
                   '熊', '纪', '舒', '屈', '项', '祝', '董', '梁']
 
-    first_names = ['的', '一', '是', '了', '我', '不', '人', '在', '他', '有', '这', '个', '上', '们', '来', '到', '时', '大', '地', '为',
+    first_names = ['的', '一', '是', '了', '我', '不','牛', '人', '在', '他', '有', '这', '个', '上', '们', '来', '到', '时', '大', '地', '为',
                    '子', '中', '你', '说', '生', '国', '年', '着', '就', '那', '和', '要', '她', '出', '也', '得', '里', '后', '自', '以',
                    '乾', '坤', '']
 
     name=random.choice(last_name)+random.choice(first_names)+random.choice(first_names)
-    log.info("本次生成的姓名为%s"%name)
     return name
 
 # 校验银行卡号是否正确的算法
@@ -134,4 +138,4 @@ def mail():
     return mail
 
 # if __name__ == '__main__':
-#     mail()
+#     name()

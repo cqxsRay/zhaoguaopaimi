@@ -17,70 +17,56 @@ class MyDB:
     port = localReadConfig.get_db("port")
     database = localReadConfig.get_db("database")
     config = {
-        'host': str(host),
+        'host': host,
         'user': username,
         'passwd': password,
         'port': int(port),
-        'db': database
+        'db': database,
+        'charset':'utf8'
     }
 
     def __init__(self):
-        self.db = None
-        self.cursor = None
 
-    def connectDB(self):
-        """
-        connect to database
-        :return:
-        """
-        try:
-            # connect to DB
-            self.db = pymysql.connect(**config)
-            # create cursor
-            self.cursor = self.db.cursor()
-            print("Connect DB successfully!")
-        except ConnectionError as ex:
-            log.info('ConnectionError')
+        # 连接数据库
+        self.db = pymysql.connect(**config)
+        # 游标设置字典类型
+        self.cursor = self.db.cursor(pymysql.cursors.DictCursor)
 
-    def executeSQL(self, sql, params):
-        """
-        execute sql
-        :param sql:
-        :return:
-        """
-        self.connectDB()
-        # executing sql
-        self.cursor.execute(sql, params)
-        # executing by committing to DB
+    def executeSQL(self, sql):
+        execute=self.cursor.execute(sql)
+        # 单纯对查询不需要提交到数据库，修改表数据则需要提交
         self.db.commit()
-        return self.cursor
-
-    def get_all(self, cursor):
-        """
-        get all result after execute sql
-        :param cursor:
-        :return:
-        """
-        value = cursor.fetchall()
+        return execute
+    # 获取查询到的所有结果
+    def get_all(self,sql):
+        self.cursor.execute(sql)
+        value = self.cursor.fetchall()
+        return value
+    # 获取查询到到第一条数据
+    def get_one(self,sql):
+        self.cursor.execute(sql)
+        value = self.cursor.fetchone()
         return value
 
-    def get_one(self, cursor):
+    # 获取查询到到前N条数据
+    def get_many(self, sql,n):
         """
-        get one result after execute sql
-        :param cursor:
+
+        :param sql: 要执行的sql
+        :param n: 要获取的条数
         :return:
         """
-        value = cursor.fetchone()
+        self.cursor.execute(sql)
+        value = self.cursor.fetchmany(n)
         return value
 
     def closeDB(self):
-        """
-        close database
-        :return:
-        """
+        self.cursor.close()
         self.db.close()
         print("Database closed!")
 
-if __name__ == '__main__':
-    s=MyDB()
-    s.connectDB()
+# if __name__ == '__main__':
+#     s=MyDB()
+#     # b=s.get_many('SELECT * FROM user_basic WHERE  user_type = 2  AND certificate_status =1',1)
+#     c=s.get_one("SELECT * FROM user_basic WHERE certificate_status=1 AND user_type=2 AND mobile LIKE '1471123%'")
+#     print(c['mobile'])
