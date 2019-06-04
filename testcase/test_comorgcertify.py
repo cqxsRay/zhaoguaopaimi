@@ -45,6 +45,14 @@ class testzpg(unittest.TestCase):
         user=method.orgcertify('14711234461','111111','北京','北京','北京','地址9号公寓楼8801德国大使馆的时光',
                                '练练啊','法人啊','33456765432','机构jigou','345344@qq.com',1)
         self.assertEqual('00000000',user['status'])
+    def test7(self):
+        '''查询企业用户认证信息'''
+        user=method.checkcomcertify('14711234461','111111')
+        self.assertEqual('00000000', user['status'])
+    def test8(self):
+        '''查询认证结果'''
+        user=method.checkcetify('14711239604','111111')
+        self.assertEqual('00000000', user['status'])
     # 以下举例从数据库取数
     # def test7(self):
     #     '''国有企业认证'''

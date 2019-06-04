@@ -58,7 +58,7 @@ class TestLogin(unittest.TestCase):
         # log.info("登录用例执行结束")
         print("登录用例执行结束")
 
-if __name__=='__main__':
-    # 方法1：执行所有的测试
-    unittest.main()
+# if __name__=='__main__':
+#     # 方法1：执行所有的测试
+#     unittest.main()
 

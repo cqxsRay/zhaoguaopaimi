@@ -296,10 +296,4 @@ def checkcetify(mobile,logpwd):
                          'source': 'WEB', 'version': '0.0.0',
                          "Content-Type": "application/json"})
     content.set_url("/property/api/v1/certificate/authority")
-    print(content.post().json())
-
-
-
-
-# login('14711239604','111111')
-# modifymobile('14711234600','111111','14711234501','')
+    return content.post().json()
