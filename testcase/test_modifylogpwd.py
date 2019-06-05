@@ -31,9 +31,11 @@ class TestModifypwd(unittest.TestCase):
         print("单条用例执行结束")
     @classmethod
     def tearDownClass(cls):
+        person.closeDB()
         print("修改登录密码用例执行结束")
 
-if __name__=='__main__':
-    # 方法1：执行所有的测试
-    unittest.main()
+
+    # if __name__=='__main__':
+#     # 方法1：执行所有的测试
+#     unittest.main()
 

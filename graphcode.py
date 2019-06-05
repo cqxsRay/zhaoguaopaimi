@@ -90,7 +90,31 @@ def forgotpwdmi(mobile, newPwd, confirmpwd,smscode='000000',utype=1,code=tx):
                                                                             'userType': utype})), 'key': a.pubkey()})
             result3 = content.post().json()
             return result3
+# 登录,加密，续输入错误密码3次需要输入图形验证码
+def login3mi(mobile,logpwd,utype=1,code=tx):
+    """
 
+    :param mobile: 手机号
+    :param logpwd: 登录密码
+    :param code: 图形验证码
+    :param utype: 用户类型
+    :return:
+    """
+    content.set_url("/property/api/v1/user/login")
+    content.set_headers({'channel': 'pc',
+                         'deviceToken': b'0000000', 'imei': b'0000000',
+                         'source': 'WEB', 'version': '0.0.0',
+                         "Content-Type": "application/json"})
+    for i in range(3):
+        content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'regNo':mobile,
+                                                                       'loginPassword':'57676',
+                                                                       'userType':utype})),'key':a.pubkey()})
+        content.post()
+    else:
+        content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':code, 'regNo':mobile,
+                      'loginPassword':logpwd,'userType':utype})),'key':a.pubkey()})
+        content.set_cookie(session)
+        return content.post().json()
 # 登录,不加密加密，续输入错误密码3次需要输入图形验证码
 def login3(mobile,logpwd,utype=1,code=tx):
     """
@@ -100,31 +124,18 @@ def login3(mobile,logpwd,utype=1,code=tx):
     :param utype: 用户类型
     :return:
     """
-    content.set_url("/property/api/v1/user/login")
-    content.set_headers({'channel': 'pc',
-                         'deviceToken': b'0000000', 'imei': b'0000000',
-                         'source': 'WEB', 'version': '0.0.0',
-                         "Content-Type": "application/json"})
-    content.set_data({'captcha':code, 'regNo':mobile,'loginPassword':logpwd,'userType':utype})
-    content.set_cookie(session)
-    return content.post().json()
-# 登录,加密，续输入错误密码3次需要输入图形验证码
-def login3mi(mobile,logpwd,code=tx,utype=1):
-    """
 
-    :param mobile: 手机号
-    :param logpwd: 登录密码
-    :param code: 图形验证码
-    :param utype: 用户类型
-    :return:
-    """
     content.set_url("/property/api/v1/user/login")
     content.set_headers({'channel': 'pc',
                          'deviceToken': b'0000000', 'imei': b'0000000',
                          'source': 'WEB', 'version': '0.0.0',
                          "Content-Type": "application/json"})
-    content.set_data({'content':rsa_aes.aes_cipher(a.ran_str, str({'captcha':code, 'regNo':mobile,
-                      'loginPassword':logpwd,'userType':utype})),'key':a.pubkey()})
-    content.set_cookie(session)
-    return content.post().json()
-forgotpwd('14711239056','111111','111111')
+    for i in range(3):
+        content.set_data({'regNo':mobile,'loginPassword':'57676','userType':utype})
+        content.post()
+    else:
+        content.set_data({'captcha':code, 'regNo':mobile,'loginPassword':logpwd,'userType':utype})
+        content.set_cookie(session)
+        return content.post().json()
+
+# login33('14711234508','111111')
