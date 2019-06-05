@@ -81,7 +81,7 @@ def logout(mobile,logpwd,utype=1):
     content.set_url("/property/api/v1/user/logout")
     return content.post().json()
 # 修改登录密码
-def modifypwd(mobile,logpwd,newpwd,smscode='000000',smstype=2):
+def modifypwd(mobile,logpwd,newpwd,utype=1,smscode='000000',smstype=2):
     """
 
     :param mobile: 手机号
@@ -92,7 +92,7 @@ def modifypwd(mobile,logpwd,newpwd,smscode='000000',smstype=2):
     :return:
     """
 
-    content.set_headers({'accessToken': loginforothers(mobile,logpwd), 'channel': 'pc',
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,utype), 'channel': 'pc',
                          'deviceToken': b'0000000', 'imei': b'0000000',
                          'source': 'WEB', 'version': '0.0.0',
                          "Content-Type": "application/json"})
@@ -100,7 +100,7 @@ def modifypwd(mobile,logpwd,newpwd,smscode='000000',smstype=2):
     content.set_data({'phone':mobile,'password':newpwd,'smsAuthCode':smscode,'smsAuthType':smstype})
     return content.post().json()
 # 修改绑定手机号
-def modifymobile(oPhone,logpwd,nPhone,smscode='000000',smstype=6):
+def modifymobile(oPhone,logpwd,nPhone,utype=1,smscode='000000',smstype=6):
     """
 
     :param oPhone: 原手机号
@@ -110,7 +110,7 @@ def modifymobile(oPhone,logpwd,nPhone,smscode='000000',smstype=6):
     :param smstype: 短信验证码类型，修改绑定手机号是6
     :return:
     """
-    content.set_headers({'accessToken': loginforothers(oPhone,logpwd), 'channel': 'pc',
+    content.set_headers({'accessToken': loginforothers(oPhone,logpwd,utype), 'channel': 'pc',
                          'deviceToken': b'0000000', 'imei': b'0000000',
                          'source': 'WEB', 'version': '0.0.0',
                          "Content-Type": "application/json"})
