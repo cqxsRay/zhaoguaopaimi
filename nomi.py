@@ -118,7 +118,7 @@ def modifymobile(oPhone,logpwd,nPhone,utype=1,smscode='000000',smstype=6):
     content.set_data({'oldPhone':oPhone,'newPhone':nPhone,'smsAuthCode':smscode,'smsAuthType':smstype})
     return content.post().json()
 # 个人用户认证
-def personcertify(mobile,logpwd,addrss,bankno,bankcode,bankname,bankphone,cardno,city,country,email,province,realname,smscode='000000'):
+def personcertify(mobile,logpwd,bankcode,bankno,bankname,bankphone,cardno,realname,email,addrss,city,province,country,smscode='000000'):
     """
     :param mobile: 登录手机号
     :param logpwd: 登录密码
@@ -148,8 +148,8 @@ def personcertify(mobile,logpwd,addrss,bankno,bankcode,bankname,bankphone,cardno
                         'province':province,'realname':realname})
     return content.post().json()
 # 企业用户认证
-def companycertify(mobile,logpwd,city,country,province,addrss,registerAmount,businessScope,realname,cardno,legalPersonName,
-                   legalPersonCardNo,creditCode,economyType,entrustUrl,licenseUrl,orgName,email,smscode='000000'):
+def companycertify(mobile,logpwd,cardno,realname,email,addrss,city,province,country,legalPersonName,legalPersonCardNo,orgName,
+                   registerAmount,businessScope,creditCode,economyType,entrustUrl,licenseUrl,smscode='000000'):
     """
     :param city: 注册城市
     :param country: 注册地辖区
@@ -184,11 +184,12 @@ def companycertify(mobile,logpwd,city,country,province,addrss,registerAmount,bus
                     'cardNo': cardno, 'city': city,
                     'county': country, 'email': email,
                     'province': province, 'realName': realname})
+
     return content.post().json()
 
 # 政府机构认证
-def orgcertify(mobile,logpwd,city,country,province,addrss,realname,legalPersonName,
-                   legalPersonCardNo,orgName,email,economyType=1,smscode='000000'):
+def orgcertify(mobile,logpwd,legalPersonName,legalPersonCardNo,orgName,addrss,city,province,
+               country,realname,email,economyType=1,smscode='000000'):
     """
     :param city: 注册城市
     :param country: 注册地辖区
@@ -214,8 +215,8 @@ def orgcertify(mobile,logpwd,city,country,province,addrss,realname,legalPersonNa
 
     return content.post().json()
 # 企业用户认证修改
-def companycermodi(mobile,logpwd,city,country,province,addrss,registerAmount,businessScope,realname,cardno,legalPersonName,
-                   legalPersonCardNo,creditCode,economyType,entrustUrl,licenseUrl,orgName,email,smscode='000000'):
+def companycermodi(mobile,logpwd,cardno,realname,email,addrss,city,province,country,legalPersonName,legalPersonCardNo,orgName,
+                   registerAmount,businessScope,creditCode,economyType,entrustUrl,licenseUrl,smscode='000000'):
     """
     :param city: 注册城市
     :param country: 注册地辖区
@@ -250,11 +251,10 @@ def companycermodi(mobile,logpwd,city,country,province,addrss,registerAmount,bus
                     'cardNo': cardno, 'city': city,
                     'county': country, 'email': email,
                     'province': province, 'realName': realname})
-    print(content.post().json())
     return content.post().json()
 # 政府机构认证修改
-def orgcermodi(mobile,logpwd,city,country,province,addrss,realname,legalPersonName,
-                   legalPersonCardNo,orgName,email,economyType=1,smscode='000000'):
+def orgcermodi(mobile,logpwd,legalPersonName,legalPersonCardNo,orgName,addrss,city,province,
+               country,realname,email,economyType=1,smscode='000000'):
     """
     :param city: 注册城市
     :param country: 注册地辖区
@@ -277,9 +277,7 @@ def orgcermodi(mobile,logpwd,city,country,province,addrss,realname,legalPersonNa
     content.set_data({'address': addrss, 'authCode': smscode,'legalPersonName':legalPersonName,
                       'legalPersonCardNo':legalPersonCardNo,'economyType':economyType,'orgName':orgName,
                       'city': city,'county': country, 'email': email,'province': province, 'realName': realname})
-
-    print(content.post().json())
-    # return content.post().json
+    return content.post().json
 
 # 查询企业用户认证信息
 def checkcomcertify(mobile,logpwd):
