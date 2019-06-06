@@ -1,4 +1,5 @@
 import unittest
+import time
 # import method
 import nomi as method
 from common import configDB
@@ -53,6 +54,7 @@ class TestLogin(unittest.TestCase):
     def tearDownClass(cls):
         person.closeDB()
         print("登录用例执行结束")
+        time.sleep(10)
 #
 # if __name__=='__main__':
 #     unittest.main()

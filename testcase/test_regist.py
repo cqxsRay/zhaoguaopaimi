@@ -1,4 +1,5 @@
 import unittest
+import time
 # import method
 import nomi as method
 from common import generator as g
@@ -55,6 +56,8 @@ class TestRegist(unittest.TestCase):
     def tearDownClass(cls):
         print("注册用例执行结束")
         person.closeDB()
+        time.sleep(10)
+
 
 # if __name__=='__main__':
 #     unittest.main()

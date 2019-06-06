@@ -1,4 +1,5 @@
 import unittest
+import time
 # import method
 import nomi as method
 from common import configDB
@@ -33,6 +34,7 @@ class TestModifypwd(unittest.TestCase):
     def tearDownClass(cls):
         person.closeDB()
         print("修改登录密码用例执行结束")
+        time.sleep(10)
 
 
     # if __name__=='__main__':

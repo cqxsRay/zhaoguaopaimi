@@ -1,4 +1,5 @@
 import unittest
+import time
 # import method
 import graphcode as method
 from common import configDB
@@ -49,6 +50,7 @@ class TestForgotpwd(unittest.TestCase):
     def tearDownClass(cls):
         person.closeDB()
         print("忘记登录密码用例执行结束")
+        time.sleep(10)
 # if __name__=='__main__':
 #     unittest.main()
 

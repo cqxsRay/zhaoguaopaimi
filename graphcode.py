@@ -116,7 +116,7 @@ def login3mi(mobile,logpwd,utype=1,code=tx):
         content.set_cookie(session)
         return content.post().json()
 # 登录,不加密加密，续输入错误密码3次需要输入图形验证码
-def login3(mobile,logpwd,utype=1,code=tx):
+def login3(mobile,logpwd,utype=1):
     """
     :param mobile: 手机号
     :param logpwd: 登录密码
@@ -124,7 +124,7 @@ def login3(mobile,logpwd,utype=1,code=tx):
     :param utype: 用户类型
     :return:
     """
-
+    [code, session] = getcapture()
     content.set_url("/property/api/v1/user/login")
     content.set_headers({'channel': 'pc',
                          'deviceToken': b'0000000', 'imei': b'0000000',

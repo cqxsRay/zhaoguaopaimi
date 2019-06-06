@@ -10,6 +10,9 @@ import shutil
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import readConfig
+from testcase import test_login ,test_regist,test_forgotpwd,test_logwithtx,test_modifylogpwd,test_modifymobile,test_personcertify,test_comorgcertify
+
+
 content=readConfig.ReadConfig()
 # 获取路径
 cur_path = os.path.dirname(os.path.realpath(__file__))
@@ -69,7 +72,16 @@ def send_mail():
     print('sendmail success')
 if __name__ == "__main__":
     # 构造测试集
-    suite = unittest.defaultTestLoader.discover(case_path,'test*.py')
+    # suite = unittest.defaultTestLoader.discover(case_path,'test*.py')
+    suite = unittest.TestSuite()
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_regist))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_login))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_forgotpwd))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_modifylogpwd))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_personcertify))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_modifymobile))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_comorgcertify))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_logwithtx))
     # 获取当前时间
     now = time.strftime('%Y-%m-%d %H_%M_%S')
     newreport = report_path + now + 'report.html'
@@ -80,6 +92,6 @@ if __name__ == "__main__":
     # 运行测试用例
     runner.run(suite)
     # 这个的测试报告文件是给jekins用的
-    shutil.copyfile(newreport,report)
+    # shutil.copyfile(newreport,report)
     # get_report()
     # send_mail()

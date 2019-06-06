@@ -1,4 +1,5 @@
 import unittest
+import time
 # import method
 import graphcode as method
 from common import configDB
@@ -24,9 +25,9 @@ class TestTx(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        person.closeDB()
         print("图形验证码登录用例执行结束")
+        person.closeDB()
+        time.sleep(10)
 
-if __name__=='__main__':
-    # 方法1：执行所有的测试
-    unittest.main()
+# if __name__=='__main__':
+#     unittest.main()

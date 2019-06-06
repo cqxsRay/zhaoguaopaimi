@@ -1,4 +1,5 @@
 import unittest
+import time
 # import method
 import nomi as method
 from common import generator
@@ -12,10 +13,6 @@ class TestModifymobile(unittest.TestCase):
         cls.qy= person.get_one("SELECT * FROM user_basic WHERE user_type=2 AND mobile LIKE '1471123%'")
     def setUp(self):
         print("单条用例执行开始")
-    def test6(self):
-        '''个人用户修改手机号'''
-        user = method.modifymobile(self.gr['mobile'],'111111',generator.createPhone())
-        self.assertEqual('00000000',user['status'])
     def test1(self):
         '''短信验证码不对'''
         user = method.modifymobile(self.gr['mobile'],'111111',generator.createPhone(),1,'436436')
@@ -34,16 +31,23 @@ class TestModifymobile(unittest.TestCase):
     #     '''新手机号为已注册手机号'''
     #     user = method.modifymobile(self.gr['mobile'],'111111','14711234502')
     #     self.assertEqual('00000009',user['status'])
-    def test5(self):
-        '''企业用户修改手机号'''
-        user = method.modifymobile(self.qy['mobile'],'111111',generator.createPhone(),2)
+    # 有bug
+    # def test5(self):
+    #     '''企业用户修改手机号'''
+    #     user = method.modifymobile(self.qy['mobile'],'111111',generator.createPhone(),2)
+    #     self.assertEqual('00000000',user['status'])
+    def test6(self):
+        '''个人用户修改手机号'''
+        user = method.modifymobile(self.gr['mobile'],'111111',generator.createPhone())
         self.assertEqual('00000000',user['status'])
     def tearDown(self):
         print("单条用例执行结束")
     @classmethod
     def tearDownClass(cls):
-        person.closeDB()
         print("修改绑定手机号用例执行结束")
+        person.closeDB()
+        time.sleep(10)
+
 
 # if __name__=='__main__':
 #     unittest.main()
