@@ -31,7 +31,7 @@ class TestModifymobile(unittest.TestCase):
     #     '''新手机号为已注册手机号'''
     #     user = method.modifymobile(self.gr['mobile'],'111111','14711234502')
     #     self.assertEqual('00000009',user['status'])
-    # 有bug
+    # tddo 仅审核过或者审核驳回的可以修改
     # def test5(self):
     #     '''企业用户修改手机号'''
     #     user = method.modifymobile(self.qy['mobile'],'111111',generator.createPhone(),2)
