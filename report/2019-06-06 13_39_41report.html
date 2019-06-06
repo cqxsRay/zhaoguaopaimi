@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 80%; }
+table       { font-size: 100%; }
+
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+output_list = Array();
+
+/*level 调整增加只显示通过用例的分类 --Findyou
+0:Summary //all hiddenRow
+1:Failed  //pt hiddenRow, ft none
+2:Pass    //pt none, ft hiddenRow
+3:All     //pt none, ft none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level < 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='heading'>
+<h1 style="font-family: Microsoft YaHei">自动化测试报告</h1>
+<p class='attribute'><strong>测试人员 : </strong> li yuanyuan</p>
+<p class='attribute'><strong>开始时间 : </strong> 2019-06-06 13:39:41</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:34.811576</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 49，通过 26，错误 23，通过率= 53.06%</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 53.06% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 26 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 49 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 14px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>testcase.test_regist.TestRegist</td>
+    <td class="text-center">9</td>
+    <td class="text-center">9</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',9)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test01: 个人用户注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse in">
+    <pre>
+    
+pt1_1: 单条用例执行开始
+[2019-06-06 13:39:42,311] - Log.py] - INFO: 本次生成的姓名为yuan296731
+[2019-06-06 13:39:42,312] - Log.py] - INFO: 本次生成的手机号为14711231762
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test02: 企业用户注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse in">
+    <pre>
+    
+pt1_2: 单条用例执行开始
+[2019-06-06 13:39:42,856] - Log.py] - INFO: 本次生成的姓名为yuan231589
+[2019-06-06 13:39:42,856] - Log.py] - INFO: 本次生成的手机号为14711231686
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test03: 两次密码不一致注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
+    <div id='div_pt1_3' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
+    <div id='div_pt1_3' class="collapse in">
+    <pre>
+    
+pt1_3: 单条用例执行开始
+[2019-06-06 13:39:44,051] - Log.py] - INFO: 本次生成的姓名为yuan271039
+[2019-06-06 13:39:44,052] - Log.py] - INFO: 本次生成的手机号为14711233784
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test04: 手机号已存在注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_4'>通过</button>
+    <div id='div_pt1_4' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_4'>通过</button>
+    <div id='div_pt1_4' class="collapse in">
+    <pre>
+    
+pt1_4: 单条用例执行开始
+[2019-06-06 13:39:44,323] - Log.py] - INFO: 本次生成的姓名为yuan864015
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test05: 用户名已存在注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_5'>通过</button>
+    <div id='div_pt1_5' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_5'>通过</button>
+    <div id='div_pt1_5' class="collapse in">
+    <pre>
+    
+pt1_5: 单条用例执行开始
+[2019-06-06 13:39:45,684] - Log.py] - INFO: 本次生成的手机号为14711235696
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test06: 验证码不对注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_6'>通过</button>
+    <div id='div_pt1_6' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_6'>通过</button>
+    <div id='div_pt1_6' class="collapse in">
+    <pre>
+    
+pt1_6: 单条用例执行开始
+[2019-06-06 13:39:46,014] - Log.py] - INFO: 本次生成的姓名为yuan038475
+[2019-06-06 13:39:46,015] - Log.py] - INFO: 本次生成的手机号为14711231312
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test07: 手机号格式不正确注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_7'>通过</button>
+    <div id='div_pt1_7' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_7'>通过</button>
+    <div id='div_pt1_7' class="collapse in">
+    <pre>
+    
+pt1_7: 单条用例执行开始
+[2019-06-06 13:39:46,342] - Log.py] - INFO: 本次生成的姓名为yuan319857
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test08: 确认密码为空注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_8'>通过</button>
+    <div id='div_pt1_8' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_8'>通过</button>
+    <div id='div_pt1_8' class="collapse in">
+    <pre>
+    
+pt1_8: 单条用例执行开始
+[2019-06-06 13:39:46,671] - Log.py] - INFO: 本次生成的姓名为yuan105279
+[2019-06-06 13:39:46,671] - Log.py] - INFO: 本次生成的手机号为14711239458
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test09: 密码为空注册</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_9' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_9'>通过</button>
+    <div id='div_pt1_9' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_9' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_9'>通过</button>
+    <div id='div_pt1_9' class="collapse in">
+    <pre>
+    
+pt1_9: 单条用例执行开始
+[2019-06-06 13:39:47,270] - Log.py] - INFO: 本次生成的姓名为yuan875691
+[2019-06-06 13:39:47,271] - Log.py] - INFO: 本次生成的手机号为14711231396
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>testcase.test_login.TestLogin</td>
+    <td class="text-center">9</td>
+    <td class="text-center">9</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c2',9)" class="detail" id='c2'>详细</a></td>
+</tr>
+
+<tr id='pt2_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test1: 手机号密码均正确，个人登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
+    <div id='div_pt2_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
+    <div id='div_pt2_1' class="collapse in">
+    <pre>
+    
+pt2_1: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test2: 登录密码错误，应该登录失败</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
+    <div id='div_pt2_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
+    <div id='div_pt2_2' class="collapse in">
+    <pre>
+    
+pt2_2: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test3: 手机号格式错误登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_3'>通过</button>
+    <div id='div_pt2_3' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_3'>通过</button>
+    <div id='div_pt2_3' class="collapse in">
+    <pre>
+    
+pt2_3: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test4: 未注册用户登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_4'>通过</button>
+    <div id='div_pt2_4' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_4'>通过</button>
+    <div id='div_pt2_4' class="collapse in">
+    <pre>
+    
+pt2_4: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test5: 密码为空登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_5'>通过</button>
+    <div id='div_pt2_5' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_5'>通过</button>
+    <div id='div_pt2_5' class="collapse in">
+    <pre>
+    
+pt2_5: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test6: 企业用户登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_6'>通过</button>
+    <div id='div_pt2_6' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_6'>通过</button>
+    <div id='div_pt2_6' class="collapse in">
+    <pre>
+    
+pt2_6: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test7: 手机号用户名为空登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_7'>通过</button>
+    <div id='div_pt2_7' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_7'>通过</button>
+    <div id='div_pt2_7' class="collapse in">
+    <pre>
+    
+pt2_7: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test8: 个人退出登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_8'>通过</button>
+    <div id='div_pt2_8' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_8'>通过</button>
+    <div id='div_pt2_8' class="collapse in">
+    <pre>
+    
+pt2_8: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test9: 企业退出登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_9' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_9'>通过</button>
+    <div id='div_pt2_9' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_9' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_9'>通过</button>
+    <div id='div_pt2_9' class="collapse in">
+    <pre>
+    
+pt2_9: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>testcase.test_logwithtx.TestTx</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">2</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c3',2)" class="detail" id='c3'>详细</a></td>
+</tr>
+
+<tr id='ft3_1' class='none'>
+    <td class='errorCase'><div class='testcase'>test1: 企业用户图形验证码登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft3_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft3_1'>错误</button>
+    <div id='div_ft3_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft3_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft3_1'>错误</button>
+    <div id='div_ft3_1' class="collapse in">
+    <pre>
+    
+ft3_1: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_logwithtx.py", line 16, in test1
+    user=method.login3(self.qy['mobile'], '111111', 2)
+  File "/Users/yaslynn/Documents/zhaoguapai/graphcode.py", line 139, in login3
+    return content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft3_2' class='none'>
+    <td class='errorCase'><div class='testcase'>test2: 个人图形验证码登录</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft3_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft3_2'>错误</button>
+    <div id='div_ft3_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft3_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft3_2'>错误</button>
+    <div id='div_ft3_2' class="collapse in">
+    <pre>
+    
+ft3_2: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_logwithtx.py", line 20, in test2
+    user=method.login3(self.gr['mobile'], '111111')
+  File "/Users/yaslynn/Documents/zhaoguapai/graphcode.py", line 139, in login3
+    return content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>testcase.test_forgotpwd.TestForgotpwd</td>
+    <td class="text-center">8</td>
+    <td class="text-center">8</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c4',8)" class="detail" id='c4'>详细</a></td>
+</tr>
+
+<tr id='pt4_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test01: 个人忘记登录密码</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
+    <div id='div_pt4_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
+    <div id='div_pt4_1' class="collapse in">
+    <pre>
+    
+pt4_1: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test02: 两次密码不一样</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_2'>通过</button>
+    <div id='div_pt4_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_2'>通过</button>
+    <div id='div_pt4_2' class="collapse in">
+    <pre>
+    
+pt4_2: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test04: 图形验证码为空</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_3'>通过</button>
+    <div id='div_pt4_3' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_3'>通过</button>
+    <div id='div_pt4_3' class="collapse in">
+    <pre>
+    
+pt4_3: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test05: 图形验证码不对</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_4'>通过</button>
+    <div id='div_pt4_4' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_4'>通过</button>
+    <div id='div_pt4_4' class="collapse in">
+    <pre>
+    
+pt4_4: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test06: 短信验证码不对</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_5'>通过</button>
+    <div id='div_pt4_5' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_5'>通过</button>
+    <div id='div_pt4_5' class="collapse in">
+    <pre>
+    
+pt4_5: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test07: 短信验证码为空</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_6'>通过</button>
+    <div id='div_pt4_6' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_6'>通过</button>
+    <div id='div_pt4_6' class="collapse in">
+    <pre>
+    
+pt4_6: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test08: 新密码为空</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_7'>通过</button>
+    <div id='div_pt4_7' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_7'>通过</button>
+    <div id='div_pt4_7' class="collapse in">
+    <pre>
+    
+pt4_7: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test09: 企业忘记登录密码</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_8'>通过</button>
+    <div id='div_pt4_8' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_8'>通过</button>
+    <div id='div_pt4_8' class="collapse in">
+    <pre>
+    
+pt4_8: 单条用例执行开始
+单条用例执行结束
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>testcase.test_modifylogpwd.TestModifypwd</td>
+    <td class="text-center">4</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">4</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c5',4)" class="detail" id='c5'>详细</a></td>
+</tr>
+
+<tr id='ft5_1' class='none'>
+    <td class='errorCase'><div class='testcase'>test1: 个人用户修改登录密码</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft5_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft5_1'>错误</button>
+    <div id='div_ft5_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft5_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft5_1'>错误</button>
+    <div id='div_ft5_1' class="collapse in">
+    <pre>
+    
+ft5_1: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_modifylogpwd.py", line 16, in test1
+    user = method.modifypwd(self.gr['mobile'],'111111','111111')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 95, in modifypwd
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,utype), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft5_2' class='none'>
+    <td class='errorCase'><div class='testcase'>test2: 短信验证码不对</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft5_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft5_2'>错误</button>
+    <div id='div_ft5_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft5_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft5_2'>错误</button>
+    <div id='div_ft5_2' class="collapse in">
+    <pre>
+    
+ft5_2: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_modifylogpwd.py", line 20, in test2
+    user = method.modifypwd(self.gr['mobile'],'111111','123456',1,'436436')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 95, in modifypwd
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,utype), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft5_3' class='none'>
+    <td class='errorCase'><div class='testcase'>test3: 短信验证码为空</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft5_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft5_3'>错误</button>
+    <div id='div_ft5_3' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft5_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft5_3'>错误</button>
+    <div id='div_ft5_3' class="collapse in">
+    <pre>
+    
+ft5_3: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_modifylogpwd.py", line 24, in test3
+    user = method.modifypwd(self.gr['mobile'],'111111','123456',1,'')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 95, in modifypwd
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,utype), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft5_4' class='none'>
+    <td class='errorCase'><div class='testcase'>test4: 企业用户修改登录密码</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft5_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft5_4'>错误</button>
+    <div id='div_ft5_4' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft5_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft5_4'>错误</button>
+    <div id='div_ft5_4' class="collapse in">
+    <pre>
+    
+ft5_4: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_modifylogpwd.py", line 28, in test4
+    user = method.modifypwd(self.qy['mobile'],'111111','111111',2)
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 95, in modifypwd
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,utype), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>testcase.test_modifymobile.TestModifymobile</td>
+    <td class="text-center">4</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">4</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c6',4)" class="detail" id='c6'>详细</a></td>
+</tr>
+
+<tr id='ft6_1' class='none'>
+    <td class='errorCase'><div class='testcase'>test1: 短信验证码不对</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft6_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft6_1'>错误</button>
+    <div id='div_ft6_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft6_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft6_1'>错误</button>
+    <div id='div_ft6_1' class="collapse in">
+    <pre>
+    
+ft6_1: 单条用例执行开始
+[2019-06-06 13:40:07,192] - Log.py] - INFO: 本次生成的手机号为14711232524
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_modifymobile.py", line 21, in test1
+    user = method.modifymobile(self.gr['mobile'],'111111',generator.createPhone(),1,'436436')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 113, in modifymobile
+    content.set_headers({'accessToken': loginforothers(oPhone,logpwd,utype), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft6_2' class='none'>
+    <td class='errorCase'><div class='testcase'>test2: 短信验证码为空</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft6_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft6_2'>错误</button>
+    <div id='div_ft6_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft6_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft6_2'>错误</button>
+    <div id='div_ft6_2' class="collapse in">
+    <pre>
+    
+ft6_2: 单条用例执行开始
+[2019-06-06 13:40:07,717] - Log.py] - INFO: 本次生成的手机号为14711230064
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_modifymobile.py", line 25, in test2
+    user = method.modifymobile(self.gr['mobile'],'111111',generator.createPhone(),1,'')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 113, in modifymobile
+    content.set_headers({'accessToken': loginforothers(oPhone,logpwd,utype), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft6_3' class='none'>
+    <td class='errorCase'><div class='testcase'>test5: 企业用户修改手机号</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft6_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft6_3'>错误</button>
+    <div id='div_ft6_3' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft6_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft6_3'>错误</button>
+    <div id='div_ft6_3' class="collapse in">
+    <pre>
+    
+ft6_3: 单条用例执行开始
+[2019-06-06 13:40:08,025] - Log.py] - INFO: 本次生成的手机号为14711230630
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_modifymobile.py", line 39, in test5
+    user = method.modifymobile(self.qy['mobile'],'111111',generator.createPhone(),2)
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 113, in modifymobile
+    content.set_headers({'accessToken': loginforothers(oPhone,logpwd,utype), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft6_4' class='none'>
+    <td class='errorCase'><div class='testcase'>test6: 个人用户修改手机号</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft6_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft6_4'>错误</button>
+    <div id='div_ft6_4' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft6_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft6_4'>错误</button>
+    <div id='div_ft6_4' class="collapse in">
+    <pre>
+    
+ft6_4: 单条用例执行开始
+[2019-06-06 13:40:08,350] - Log.py] - INFO: 本次生成的手机号为14711232975
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_modifymobile.py", line 17, in test6
+    user = method.modifymobile(self.gr['mobile'],'111111',generator.createPhone())
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 113, in modifymobile
+    content.set_headers({'accessToken': loginforothers(oPhone,logpwd,utype), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>testcase.test_personcertify.TestPercerty</td>
+    <td class="text-center">5</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">5</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c7',5)" class="detail" id='c7'>详细</a></td>
+</tr>
+
+<tr id='ft7_1' class='none'>
+    <td class='errorCase'><div class='testcase'>test2: 银行卡号不符合规则</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft7_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft7_1'>错误</button>
+    <div id='div_ft7_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft7_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft7_1'>错误</button>
+    <div id='div_ft7_1' class="collapse in">
+    <pre>
+    
+ft7_1: 单条用例执行开始
+[2019-06-06 13:40:08,863] - Log.py] - INFO: 本次生成的身份证号为110229197504092713
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_personcertify.py", line 25, in test2
+    '详细地址达到噶收到哥哥3的爱国啊郭德纲', '北京', '北京', '中国')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 139, in personcertify
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft7_2' class='none'>
+    <td class='errorCase'><div class='testcase'>test3: 真实姓名不符合规则</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft7_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft7_2'>错误</button>
+    <div id='div_ft7_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft7_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft7_2'>错误</button>
+    <div id='div_ft7_2' class="collapse in">
+    <pre>
+    
+ft7_2: 单条用例执行开始
+[2019-06-06 13:40:09,393] - Log.py] - INFO: 本次生成的银行卡号为6226092862545110
+[2019-06-06 13:40:09,394] - Log.py] - INFO: 本次生成的身份证号为11010919680922286X
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_personcertify.py", line 32, in test3
+    '详细地址达到噶收到哥哥3的爱国啊郭德纲', '北京', '北京', '中国')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 139, in personcertify
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft7_3' class='none'>
+    <td class='errorCase'><div class='testcase'>test4: 身份证号不符合规则</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft7_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft7_3'>错误</button>
+    <div id='div_ft7_3' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft7_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft7_3'>错误</button>
+    <div id='div_ft7_3' class="collapse in">
+    <pre>
+    
+ft7_3: 单条用例执行开始
+[2019-06-06 13:40:10,058] - Log.py] - INFO: 本次生成的银行卡号为6226095502534691
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_personcertify.py", line 38, in test4
+    '详细地址达到噶收到哥哥3的爱国啊郭德纲', '北京', '北京', '中国')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 139, in personcertify
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft7_4' class='none'>
+    <td class='errorCase'><div class='testcase'>test5: 邮箱不符合规则</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft7_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft7_4'>错误</button>
+    <div id='div_ft7_4' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft7_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft7_4'>错误</button>
+    <div id='div_ft7_4' class="collapse in">
+    <pre>
+    
+ft7_4: 单条用例执行开始
+[2019-06-06 13:40:10,670] - Log.py] - INFO: 本次生成的银行卡号为6226096678975940
+[2019-06-06 13:40:10,671] - Log.py] - INFO: 本次生成的身份证号为110116199502011168
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_personcertify.py", line 44, in test5
+    '详细地址达到噶收到哥哥3的爱国啊郭德纲', '北京', '北京', '中国')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 139, in personcertify
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft7_5' class='none'>
+    <td class='errorCase'><div class='testcase'>test6: 个人认证所有信息均正确</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft7_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft7_5'>错误</button>
+    <div id='div_ft7_5' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft7_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft7_5'>错误</button>
+    <div id='div_ft7_5' class="collapse in">
+    <pre>
+    
+ft7_5: 单条用例执行开始
+[2019-06-06 13:40:10,996] - Log.py] - INFO: 本次生成的银行卡号为6226090144828593
+[2019-06-06 13:40:10,997] - Log.py] - INFO: 本次生成的身份证号为110229198711061615
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_personcertify.py", line 18, in test6
+    '详细地址达到噶收到哥哥3的爱国啊郭德纲','北京','北京','中国')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 139, in personcertify
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>testcase.test_comorgcertify.testzpg</td>
+    <td class="text-center">8</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">8</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c8',8)" class="detail" id='c8'>详细</a></td>
+</tr>
+
+<tr id='ft8_1' class='none'>
+    <td class='errorCase'><div class='testcase'>test1: 国有企业认证</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft8_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft8_1'>错误</button>
+    <div id='div_ft8_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft8_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft8_1'>错误</button>
+    <div id='div_ft8_1' class="collapse in">
+    <pre>
+    
+ft8_1: 单条用例执行开始
+[2019-06-06 13:40:11,781] - Log.py] - INFO: 本次生成的身份证号为110115199601152875
+[2019-06-06 13:40:11,782] - Log.py] - INFO: 本次生成的身份证号为110115199210311322
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_comorgcertify.py", line 20, in test1
+    '100000000','经营范围：服装','社会统一信用码',2,'委托证书存储地址','营业执照存储地址')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 173, in companycertify
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,2), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft8_2' class='none'>
+    <td class='errorCase'><div class='testcase'>test2: 非国有企业认证</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft8_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft8_2'>错误</button>
+    <div id='div_ft8_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft8_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft8_2'>错误</button>
+    <div id='div_ft8_2' class="collapse in">
+    <pre>
+    
+ft8_2: 单条用例执行开始
+[2019-06-06 13:40:12,268] - Log.py] - INFO: 本次生成的身份证号为110116200111141411
+[2019-06-06 13:40:12,269] - Log.py] - INFO: 本次生成的身份证号为110200195509292376
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_comorgcertify.py", line 29, in test2
+    '100000000', '经营范围：服装', '社会统一信用码',3, '委托证书存储地址', '营业执照存储地址')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 173, in companycertify
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,2), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft8_3' class='none'>
+    <td class='errorCase'><div class='testcase'>test3: 国有企业认证修改</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft8_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft8_3'>错误</button>
+    <div id='div_ft8_3' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft8_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft8_3'>错误</button>
+    <div id='div_ft8_3' class="collapse in">
+    <pre>
+    
+ft8_3: 单条用例执行开始
+[2019-06-06 13:40:12,738] - Log.py] - INFO: 本次生成的身份证号为110116200403031820
+[2019-06-06 13:40:12,739] - Log.py] - INFO: 本次生成的身份证号为110117196305012826
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_comorgcertify.py", line 37, in test3
+    '100000000', '经营范围：服装', '社会统一信用码', 2, '委托证书存储地址', '营业执照存储地址')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 240, in companycermodi
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,2), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft8_4' class='none'>
+    <td class='errorCase'><div class='testcase'>test4: 非国有企业认证修改</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft8_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft8_4'>错误</button>
+    <div id='div_ft8_4' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft8_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft8_4'>错误</button>
+    <div id='div_ft8_4' class="collapse in">
+    <pre>
+    
+ft8_4: 单条用例执行开始
+[2019-06-06 13:40:13,225] - Log.py] - INFO: 本次生成的身份证号为110112197804151487
+[2019-06-06 13:40:13,226] - Log.py] - INFO: 本次生成的身份证号为110228198710011193
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_comorgcertify.py", line 45, in test4
+    '100000000', '修改后经营范围：服装', '社会统一信用码', 3, '委托证书存储地址', '营业执照存储地址')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 240, in companycermodi
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,2), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft8_5' class='none'>
+    <td class='errorCase'><div class='testcase'>test5: 政府机构认证</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft8_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft8_5'>错误</button>
+    <div id='div_ft8_5' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft8_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft8_5'>错误</button>
+    <div id='div_ft8_5' class="collapse in">
+    <pre>
+    
+ft8_5: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_comorgcertify.py", line 51, in test5
+    '北京','北京','中国','练练','345@qq.com')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 207, in orgcertify
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,2), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft8_6' class='none'>
+    <td class='errorCase'><div class='testcase'>test6: 政府机构认证修改</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft8_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft8_6'>错误</button>
+    <div id='div_ft8_6' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft8_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft8_6'>错误</button>
+    <div id='div_ft8_6' class="collapse in">
+    <pre>
+    
+ft8_6: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_comorgcertify.py", line 57, in test6
+    '北京', '北京', '中国', '练练', '345@qq.com')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 272, in orgcermodi
+    content.set_headers({'accessToken': loginforothers(mobile,logpwd,2), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft8_7' class='none'>
+    <td class='errorCase'><div class='testcase'>test7: 查询企业用户认证信息</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft8_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft8_7'>错误</button>
+    <div id='div_ft8_7' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft8_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft8_7'>错误</button>
+    <div id='div_ft8_7' class="collapse in">
+    <pre>
+    
+ft8_7: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_comorgcertify.py", line 62, in test7
+    user=method.checkcomcertify(qy['mobile'],'111111')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 284, in checkcomcertify
+    content.set_headers({ 'accessToken': loginforothers(mobile,logpwd,2),'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft8_8' class='none'>
+    <td class='errorCase'><div class='testcase'>test8: 查询认证结果</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft8_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft8_8'>错误</button>
+    <div id='div_ft8_8' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft8_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft8_8'>错误</button>
+    <div id='div_ft8_8' class="collapse in">
+    <pre>
+    
+ft8_8: 单条用例执行开始
+单条用例执行结束
+Traceback (most recent call last):
+  File "/Users/yaslynn/Documents/zhaoguapai/testcase/test_comorgcertify.py", line 67, in test8
+    user=method.checkcetify(qy['mobile'],'111111')
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 292, in checkcetify
+    content.set_headers({'accessToken': loginforothers(mobile, logpwd, 2), 'channel': 'pc',
+  File "/Users/yaslynn/Documents/zhaoguapai/nomi.py", line 62, in loginforothers
+    user = content.post().json()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>49</td>
+    <td>26</td>
+    <td>0</td>
+    <td>23</td>
+    <td>通过率：53.06%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+
+</body>
+</html>

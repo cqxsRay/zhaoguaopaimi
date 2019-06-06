@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a94990f0-276c-4cd4-b608-186d0a231f2b" name="Default Changelist" comment="修改用例">
+    <list default="true" id="a94990f0-276c-4cd4-b608-186d0a231f2b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -184,11 +184,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcase/test_logwithtx.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcase/test_modifymobile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="495">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -209,30 +209,6 @@
                 <element signature="e#2896#3320#0" />
                 <element signature="e#3398#4171#0" />
                 <element signature="e#5993#7409#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcase/test_comorgcertify.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphcode.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="134" column="22" lean-forward="true" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -317,11 +293,11 @@
         <option value="$PROJECT_DIR$/testcase/test_login.py" />
         <option value="$PROJECT_DIR$/testcase/test_logwithtx.py" />
         <option value="$PROJECT_DIR$/run_all.py" />
-        <option value="$PROJECT_DIR$/testcase/test_comorgcertify.py" />
         <option value="$PROJECT_DIR$/graphcode.py" />
         <option value="$PROJECT_DIR$/testcase/test_forgotpwd.py" />
         <option value="$PROJECT_DIR$/testcase/test_modifylogpwd.py" />
         <option value="$PROJECT_DIR$/testcase/test_personcertify.py" />
+        <option value="$PROJECT_DIR$/testcase/test_comorgcertify.py" />
         <option value="$PROJECT_DIR$/testcase/test_modifymobile.py" />
       </list>
     </option>
@@ -594,7 +570,7 @@
       <workItem from="1559632530404" duration="38000" />
       <workItem from="1559640633795" duration="1052000" />
       <workItem from="1559699197728" duration="14004000" />
-      <workItem from="1559785162802" duration="13642000" />
+      <workItem from="1559785162802" duration="14831000" />
     </task>
     <task id="LOCAL-00001" summary="更新pc测试用例的模版">
       <created>1557989617822</created>
@@ -876,7 +852,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559809378210</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="修改用例">
+      <created>1559810318168</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1559810318168</updated>
+    </task>
+    <task id="LOCAL-00042" summary="修改绑定手机号">
+      <created>1559814691559</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1559814691559</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -912,7 +902,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="727390000" />
+    <option name="totallyTimeSpent" value="728579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -996,7 +986,8 @@
     <MESSAGE value="改为从数据库取用户数据" />
     <MESSAGE value="修改认证用例" />
     <MESSAGE value="修改用例" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改用例" />
+    <MESSAGE value="修改绑定手机号" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改绑定手机号" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1327,16 +1318,6 @@
     <entry file="file://$PROJECT_DIR$/report/2019-06-06 14_50_37report.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_all.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="79" column="79" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
-          <folding>
-            <element signature="e#33#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcase/test_forgotpwd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1377,26 +1358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/test_modifymobile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="98" lean-forward="true" selection-start-line="11" selection-start-column="98" selection-end-line="11" selection-end-column="98" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/test_logwithtx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/method.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
@@ -1415,8 +1376,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testcase/test_comorgcertify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
+        <state relative-caret-position="672">
+          <caret line="46" column="51" lean-forward="true" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_logwithtx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="79" column="79" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+          <folding>
+            <element signature="e#33#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/test_modifymobile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
